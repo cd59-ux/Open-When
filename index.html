@@ -1,0 +1,1734 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Open When…</title>
+<meta name="description" content="Letters for the days in between, and a little corner for the two of us.">
+<meta property="og:title" content="Open When… ♥">
+<meta property="og:description" content="A packet of letters for the days in between, and a little corner for the two of us.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#2a2556">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Open When">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gloock&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Courier+Prime:wght@400;700&family=La+Belle+Aurore&display=swap">
+<style>
+/* Layout: an airmail packet under a night sky. Gate → sky banner → road-trip countdown → three panels → envelopes → shared corner. */
+:root{
+  --ground:#e6ebf2;--ink:#1f2a44;--muted:#5b6782;--card:#f7f9fc;--line:#cdd5e3;
+  --env:#fbf8f1;--env-edge:#d9d2c3;--red:#c2364a;--blue:#2b4f9e;--sticky:#fff4c9;--sticky-2:#ffe0e4;
+  --paper:#fffdf8;--paper-ink:#2a2622;--seal:#a3243a;--shadow:rgba(31,42,68,.16);--fridge:#f1f4f7;--fridge-2:#e2e8ee;
+  --f-display:"Gloock",Georgia,serif;--f-body:"Newsreader",Georgia,serif;--f-type:"Courier Prime","Courier New",monospace;--f-hand:"La Belle Aurore","Bradley Hand",cursive;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){:root{
+  --ground:#121a2e;--ink:#e9ecf5;--muted:#9aa5c3;--card:#1b2540;--line:#2e3a5c;--env:#f3eee3;--env-edge:#cfc6b3;
+  --paper:#f7f2e7;--blue:#6d90de;--red:#e0566a;--sticky:#f6e9b8;--sticky-2:#f6d3d8;--shadow:rgba(0,0,0,.45);--fridge:#2a3550;--fridge-2:#222c45;color-scheme:dark}}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--ground);color:var(--ink);font-family:var(--f-body);font-size:14px;padding:env(safe-area-inset-top,0px) 16px env(safe-area-inset-bottom,0px);min-height:100vh;
+  background-image:radial-gradient(circle at 20% 10%,color-mix(in srgb,var(--blue) 10%,transparent),transparent 40%),radial-gradient(circle at 85% 70%,color-mix(in srgb,var(--red) 8%,transparent),transparent 45%)}
+img{max-width:100%}
+[hidden]{display:none!important}
+.wrap{max-width:1000px;margin:0 auto;padding-block:32px 64px;display:grid;gap:48px}
+.eyebrow{font-family:var(--f-type);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin:0}
+.postmark{font-family:var(--f-type);font-size:12px;letter-spacing:.18em;text-transform:uppercase;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.postmark .pm{border:1.5px solid currentColor;border-radius:999px;padding:3px 10px}
+h1{font-family:var(--f-display);font-weight:400;font-size:clamp(40px,8vw,72px);line-height:1;margin:0;text-wrap:balance}
+.lede{font-size:19px;line-height:1.55;max-width:56ch;margin:0}
+.section-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:20px}
+.section-head h2{font-family:var(--f-display);font-weight:400;font-size:30px;margin:0;position:relative;padding-bottom:10px}
+.section-head h2::after{content:"";position:absolute;left:0;bottom:0;width:120px;height:10px;background:var(--red);opacity:.7;
+  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 10'%3E%3Cpath d='M2 6c12-6 22 4 34 0s22-6 34 0 22 4 34 0 12-3 14-2' fill='none' stroke='black' stroke-width='2.5' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat;
+  mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 10'%3E%3Cpath d='M2 6c12-6 22 4 34 0s22-6 34 0 22 4 34 0 12-3 14-2' fill='none' stroke='black' stroke-width='2.5' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat}
+.section-head p{margin:0;color:var(--muted);font-size:16px}
+.count{font-family:var(--f-type);font-size:13px;color:var(--muted)}
+.muted{color:var(--muted);font-size:15px;margin:0;line-height:1.45}
+
+.btn{font-family:var(--f-type);font-size:13px;letter-spacing:.08em;text-transform:uppercase;border:1.5px solid var(--red);color:var(--red);background:none;border-radius:999px;padding:8px 16px;cursor:pointer}
+.btn:hover{background:color-mix(in srgb,var(--red) 10%,transparent)}
+.btn.solid{background:var(--red);color:#fff}
+.btn.solid:hover{background:color-mix(in srgb,var(--red) 85%,black)}
+.btn:disabled{opacity:.5;cursor:default}
+.link{font-family:var(--f-type);font-size:12px;background:none;border:none;color:var(--muted);text-decoration:underline;cursor:pointer;padding:0}
+button:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+input[type=text],input[type=password],input[type=date],input[type=datetime-local],textarea{font:inherit;font-size:16px;color:var(--ink);background:var(--ground);border:1.5px solid var(--line);border-radius:8px;padding:9px 12px;width:100%;min-width:0}
+textarea{resize:vertical;min-height:72px}
+.addrow{display:flex;gap:10px;align-items:flex-start}
+.addrow > :first-child{flex:1;min-width:0}
+
+/* Sky */
+.sky{position:relative;border-radius:18px;overflow:hidden;padding:clamp(28px,6vw,56px) clamp(22px,5vw,48px);background:linear-gradient(160deg,#16244d 0%,#2a2556 50%,#4b2648 100%);color:#f6f0fb;box-shadow:0 18px 40px var(--shadow)}
+.sky canvas,.gate canvas{position:absolute;inset:0;width:100%;height:100%}
+.moon{position:absolute;right:clamp(18px,6vw,64px);top:clamp(18px,4vw,36px);width:clamp(48px,9vw,78px);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 38% 38%,#fffaf0,#f4e4b6 60%,#d8c387);box-shadow:0 0 50px 14px rgba(255,236,190,.22)}
+.moon::after{content:"";position:absolute;width:22%;height:22%;left:52%;top:30%;border-radius:50%;background:rgba(200,178,120,.35);box-shadow:-18px 16px 0 -2px rgba(200,178,120,.25)}
+.sky-inner{position:relative;display:grid;gap:12px;max-width:60ch}
+.sky .postmark,.sky .lede{color:#cdc5e4}
+.sky h1{color:#fff;text-shadow:0 2px 24px rgba(255,200,230,.25)}
+.sky-whisper{font-family:var(--f-hand);font-size:24px;color:#f7d6e2;margin:4px 0 0}
+.sky .who-chip{position:relative;justify-self:start;font-family:var(--f-type);font-size:11px;color:#cdc5e4;background:none;border:1px solid rgba(255,255,255,.3);border-radius:999px;padding:4px 10px;cursor:pointer}
+
+/* Gate */
+.gate{position:fixed;inset:0;z-index:50;background:linear-gradient(160deg,#16244d 0%,#2a2556 50%,#4b2648 100%);color:#f6f0fb;display:grid;place-items:center;padding:24px 16px;overflow-y:auto}
+.gate-card{position:relative;width:100%;max-width:420px;display:grid;gap:16px;text-align:center}
+.gate-card h1{color:#fff}
+.gate-card p{margin:0;color:#cdc5e4;font-size:17px;line-height:1.5}
+.gate-card input{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.35);color:#fff;text-align:center;font-size:18px}
+.gate-card input::placeholder{color:#b5acd0}
+.pw{position:relative}
+.pw input{padding-inline:48px}
+.eye{position:absolute;right:6px;top:50%;transform:translateY(-50%);width:38px;height:38px;border:none;background:none;color:#cdc5e4;cursor:pointer;border-radius:8px;display:grid;place-items:center}
+.eye:hover{color:#fff}
+.eye[aria-pressed="true"] .slash{display:none}
+.whos{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.whos button{font-family:var(--f-hand);font-size:20px;line-height:1.2;padding:14px 10px;border-radius:12px;border:1.5px solid rgba(255,255,255,.35);background:rgba(255,255,255,.06);color:#fff;cursor:pointer}
+.whos button[aria-pressed="true"]{background:#f7d6e2;color:#2a2556;border-color:#f7d6e2}
+.gate .btn.solid{justify-self:center;background:#e0566a;border-color:#e0566a}
+.gate .err{color:#ffb4c0;font-family:var(--f-type);font-size:13px;min-height:1.2em}
+.gate .link{color:#cdc5e4}
+.gate .pin-note{font-size:14px;color:#b5acd0}
+#gate-pin{letter-spacing:.3em}
+
+/* Ticket */
+.ticket{display:grid;grid-template-columns:1fr auto;background:var(--card);border-radius:10px;box-shadow:0 10px 24px var(--shadow);overflow:hidden;border:1px solid color-mix(in srgb,var(--line) 60%,transparent)}
+.ticket-main{padding:24px clamp(18px,4vw,32px);display:grid;gap:14px;min-width:0}
+.ticket-top{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:center}
+.ticket-stub{border-left:2px dashed color-mix(in srgb,var(--muted) 45%,transparent);padding:24px;display:grid;place-items:center;text-align:center;gap:6px;min-width:150px}
+.ticket-stub .big{font-family:var(--f-display);font-size:30px;line-height:1}
+.route{display:flex;align-items:center;gap:12px;font-family:var(--f-type);font-size:13px;letter-spacing:.1em;text-transform:uppercase;flex-wrap:wrap}
+.route .line{flex:1;min-width:60px;border-top:2px dotted var(--muted);position:relative}
+.route .line::after{content:"";position:absolute;left:0;top:-15px;width:30px;height:15px;background:var(--red);
+  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 16'%3E%3Cpath d='M1 12V8.5L7 7l4.5-4h10l4.5 4 5 1.2V12z'/%3E%3Ccircle cx='8' cy='12.5' r='3.2'/%3E%3Ccircle cx='24' cy='12.5' r='3.2'/%3E%3C/svg%3E") center/contain no-repeat;
+  mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 16'%3E%3Cpath d='M1 12V8.5L7 7l4.5-4h10l4.5 4 5 1.2V12z'/%3E%3Ccircle cx='8' cy='12.5' r='3.2'/%3E%3Ccircle cx='24' cy='12.5' r='3.2'/%3E%3C/svg%3E") center/contain no-repeat;
+  animation:drive 5s ease-in-out infinite}
+@keyframes drive{0%{left:0;opacity:0}10%{opacity:1}80%{opacity:1}92%,100%{left:calc(100% - 30px);opacity:0}}
+.clock{display:flex;gap:clamp(10px,3vw,22px);flex-wrap:wrap}
+.unit{display:grid;gap:2px}
+.unit b{font-family:var(--f-display);font-weight:400;font-size:clamp(36px,7vw,56px);line-height:1;font-variant-numeric:tabular-nums}
+.unit span{font-family:var(--f-type);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.ticket-label{font-family:var(--f-hand);font-size:24px;margin:0}
+.arrived{font-family:var(--f-display);font-size:clamp(30px,6vw,46px);margin:0}
+.visit-form{display:grid;gap:10px;grid-template-columns:1fr 1fr auto;align-items:end}
+.visit-form label{display:grid;gap:4px;font-family:var(--f-type);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);min-width:0}
+@media (max-width:640px){.visit-form{grid-template-columns:1fr}}
+@media (max-width:560px){.ticket{grid-template-columns:1fr}.ticket-stub{border-left:none;border-top:2px dashed color-mix(in srgb,var(--muted) 45%,transparent);grid-auto-flow:column;justify-content:space-between;padding:16px 20px}}
+
+/* Panels */
+.row{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:24px 20px}
+.panel{position:relative;background:var(--card);border-radius:10px;padding:20px 22px;display:grid;gap:14px;align-content:start;box-shadow:0 6px 16px var(--shadow);min-width:0;border:1px solid color-mix(in srgb,var(--line) 60%,transparent)}
+.panel::before{content:"";position:absolute;top:-11px;left:50%;width:86px;height:22px;margin-left:-43px;transform:rotate(-3deg);opacity:.85;background:repeating-linear-gradient(90deg,color-mix(in srgb,var(--red) 35%,transparent) 0 6px,color-mix(in srgb,var(--red) 25%,transparent) 6px 12px)}
+/* Washi tape: each panel gets its own pattern, angle, length and spot */
+.panel[data-tape]::before{width:var(--tw,86px);margin-left:calc(var(--tw,86px) / -2 + var(--tx,0px));transform:rotate(var(--tr,-3deg));
+  -webkit-mask:linear-gradient(90deg,transparent 0 2px,#000 2px calc(100% - 2px),transparent calc(100% - 2px)),repeating-linear-gradient(0deg,#000 0 3px,transparent 3px 4px);
+  -webkit-mask-composite:source-over}
+.panel[data-tape="0"]::before{background:repeating-linear-gradient(90deg,rgba(224,67,92,.42) 0 6px,rgba(224,67,92,.24) 6px 12px)}
+.panel[data-tape="1"]::before{background:linear-gradient(90deg,rgba(79,127,214,.30) 50%,transparent 50%) 0 0/10px 10px,linear-gradient(rgba(79,127,214,.30) 50%,rgba(255,255,255,.35) 50%) 0 0/10px 10px}
+.panel[data-tape="2"]::before{background:rgba(244,185,58,.55)}
+.panel[data-tape="3"]::before{background:radial-gradient(circle,rgba(255,255,255,.95) 0 2px,transparent 2.5px) 0 0/9px 9px,rgba(58,143,106,.45)}
+.panel[data-tape="4"]::before{background:repeating-linear-gradient(45deg,rgba(138,106,214,.45) 0 5px,rgba(212,188,255,.45) 5px 10px)}
+.panel[data-tape="5"]::before{background:radial-gradient(circle,rgba(224,67,92,.7) 0 2.2px,transparent 2.6px) 0 0/12px 11px,rgba(255,214,200,.75)}
+.panel[data-tape="6"]::before{background:repeating-linear-gradient(90deg,rgba(255,143,184,.5) 0 4px,rgba(255,255,255,.5) 4px 8px,rgba(244,185,58,.45) 8px 12px,rgba(255,255,255,.5) 12px 16px)}
+.panel[data-tape="7"]::before{background:repeating-linear-gradient(0deg,rgba(43,79,158,.35) 0 3px,rgba(255,255,255,.4) 3px 6px)}
+.panel[data-tape="8"]::before{background:linear-gradient(90deg,rgba(255,111,145,.45),rgba(255,184,58,.45),rgba(127,180,255,.45))}
+.panel[data-tape="9"]::before{background:radial-gradient(circle at 50% 60%,rgba(255,255,255,.9) 0 1.6px,transparent 2px) 0 0/8px 8px,rgba(42,31,92,.55)}
+.zones{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.zone{display:grid;gap:2px}
+.zone .t{font-family:var(--f-display);font-size:30px;font-variant-numeric:tabular-nums;line-height:1.1}
+.zone .who{font-family:var(--f-hand);font-size:20px}
+.zone .what{font-size:15px;color:var(--muted);font-style:italic}
+.pocket-note{font-family:var(--f-hand);font-size:22px;line-height:1.35;min-height:2.8em;margin:0}
+.pocket-manage{border-top:1px solid var(--line);padding-top:12px;display:grid;gap:10px}
+.pocket-manage summary{font-family:var(--f-type);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);cursor:pointer}
+.pocket-list{list-style:none;margin:0;padding:0;display:grid;gap:6px;max-height:220px;overflow-y:auto}
+.pocket-list li{display:flex;gap:8px;justify-content:space-between;align-items:flex-start;font-size:15px;line-height:1.4}
+.pocket-list li span{min-width:0;overflow-wrap:anywhere}
+.heartbtn{width:88px;height:88px;border-radius:50%;border:none;cursor:pointer;justify-self:center;background:radial-gradient(circle at 35% 30%,color-mix(in srgb,var(--red) 65%,white),var(--red) 60%);color:#fff;font-size:38px;box-shadow:0 8px 20px color-mix(in srgb,var(--red) 40%,transparent);transition:transform .15s}
+.heartbtn:active{transform:scale(.92)}
+.heartbtn:disabled{filter:grayscale(.7);opacity:.6;cursor:default}
+
+/* Envelopes */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:28px}
+.env{position:relative;aspect-ratio:1.55;max-width:100%;border:none;padding:0;cursor:pointer;background:none;font:inherit;color:var(--paper-ink);text-align:left;transition:transform .25s ease}
+.env:nth-child(3n+1){rotate:-1deg}.env:nth-child(3n+2){rotate:.8deg}.env:nth-child(3n){rotate:-.4deg}
+.env:not(.locked):hover{transform:translateY(-4px) rotate(-.6deg)}
+.env:focus-visible{outline:3px solid var(--blue);outline-offset:6px;border-radius:6px}
+.env-body{position:absolute;inset:0;background:var(--env);border-radius:4px;box-shadow:0 10px 24px var(--shadow);overflow:hidden;padding:9px}
+.env-body::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(-45deg,#c2364a 0 14px,var(--env) 14px 22px,#2b4f9e 22px 36px,var(--env) 36px 44px)}
+.env-inner{position:relative;height:100%;background:var(--env);border-radius:2px;display:flex;flex-direction:column;justify-content:flex-end;padding:16px 18px}
+.flap{position:absolute;left:9px;right:9px;top:9px;height:52%;background:linear-gradient(var(--env),color-mix(in srgb,var(--env-edge) 60%,var(--env)));clip-path:polygon(0 0,100% 0,50% 100%);z-index:1;transition:transform .5s ease;transform-origin:top}
+.seal{position:absolute;left:50%;top:calc(52% - 4px);width:44px;height:44px;margin-left:-22px;margin-top:-22px;border-radius:50%;z-index:2;background:radial-gradient(circle at 35% 30%,color-mix(in srgb,var(--seal) 70%,white),var(--seal) 55%,color-mix(in srgb,var(--seal) 70%,black));box-shadow:0 2px 4px rgba(0,0,0,.3),inset 0 0 0 4px color-mix(in srgb,var(--seal) 85%,black);display:grid;place-items:center;color:color-mix(in srgb,var(--seal) 35%,white);font-family:var(--f-display);font-size:18px}
+.stamp{position:absolute;top:18px;right:20px;z-index:3;width:42px;height:50px;background:#2b4f9e;color:#fff;font-family:var(--f-type);font-size:9px;display:grid;place-items:center;text-align:center;line-height:1.1;outline:3px dotted var(--env);outline-offset:-3px}
+.to{font-family:var(--f-type);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#7a7266;position:relative;z-index:3}
+.label{font-family:var(--f-hand);font-size:clamp(20px,2.4vw,24px);line-height:1.2;position:relative;z-index:3;text-wrap:balance}
+.env.opened .flap{transform:scaleY(-1);opacity:.55}
+.env.opened .seal{opacity:0}
+.tag{position:absolute;top:18px;left:20px;z-index:3;font-family:var(--f-type);font-size:10px;letter-spacing:.14em;text-transform:uppercase;padding:2px 6px;transform:rotate(-8deg);border:1.5px solid;background:var(--env)}
+.tag.done{color:#c2364a;border-color:#c2364a}
+.tag.wait{color:#6f6658;border-color:#9b9282}
+.env.locked{cursor:not-allowed}
+.env.locked .seal::after{content:"";position:absolute;inset:-6px;border-radius:50%;border:1.5px dashed color-mix(in srgb,var(--seal) 60%,transparent)}
+.env.shake{animation:shake .45s}
+@keyframes shake{20%{transform:translateX(-6px) rotate(-1deg)}40%{transform:translateX(6px) rotate(1deg)}60%{transform:translateX(-4px)}80%{transform:translateX(3px)}}
+
+/* Wall & lists */
+.wall{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:18px;margin-top:6px}
+.sticky{background:var(--sticky);color:#2a2622;padding:16px 16px 12px;min-height:140px;display:flex;flex-direction:column;gap:10px;box-shadow:0 6px 14px var(--shadow);transform:rotate(var(--tilt,0deg));position:relative}
+.sticky::before{content:"";position:absolute;top:-9px;left:50%;width:56px;height:18px;margin-left:-28px;background:rgba(255,255,255,.55);transform:rotate(-4deg);box-shadow:0 1px 2px rgba(0,0,0,.08)}
+.sticky.alt{background:var(--sticky-2)}
+.sticky p{font-family:var(--f-hand);font-size:20px;line-height:1.3;margin:0;flex:1;overflow-wrap:anywhere;white-space:pre-wrap}
+.sticky .meta{font-family:var(--f-type);font-size:11px;color:#6f6658;display:flex;justify-content:space-between;gap:6px}
+.sticky .x,.polaroid .x{background:none;border:none;color:#6f6658;cursor:pointer;font-size:16px;padding:0 2px;line-height:1}
+.empty{border:2px dashed var(--line);border-radius:10px;padding:22px;color:var(--muted);font-size:16px;text-align:center;grid-column:1/-1}
+.plans{list-style:none;margin:0;padding:0;display:grid;gap:4px}
+.plans li{display:flex;gap:12px;align-items:flex-start;padding:8px 0;border-bottom:1px dotted var(--line)}
+.plans input[type=checkbox]{width:20px;height:20px;accent-color:var(--red);margin-top:3px;flex:none}
+.plans .txt{flex:1;min-width:0;font-size:17px;line-height:1.4;overflow-wrap:anywhere}
+.plans .done .txt{text-decoration:line-through;color:var(--muted)}
+.plans .by{font-family:var(--f-type);font-size:11px;color:var(--muted);display:block}
+.plans .x{background:none;border:none;color:var(--muted);cursor:pointer;font-size:16px}
+
+/* Photos */
+.photo-form{display:grid;grid-template-columns:auto 1fr auto;gap:10px;align-items:center}
+@media (max-width:600px){.photo-form{grid-template-columns:1fr}}
+.filepick{font-family:var(--f-type);font-size:13px;border:1.5px dashed var(--line);border-radius:8px;padding:9px 14px;cursor:pointer;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%;position:relative}
+.filepick:focus-within{outline:3px solid var(--blue);outline-offset:2px}
+.filepick input{position:absolute;opacity:0;width:1px;height:1px}
+.polaroids{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:26px 22px;padding-top:8px}
+.polaroid{margin:0;background:#fdfcf9;color:#2a2622;padding:10px 10px 12px;box-shadow:0 8px 18px var(--shadow);transform:rotate(var(--tilt,0deg));position:relative;display:grid;gap:8px;transition:transform .2s}
+.polaroid:hover{transform:rotate(0deg) scale(1.03)}
+.polaroid::before{content:"";position:absolute;top:-9px;left:50%;width:60px;height:18px;margin-left:-30px;background:rgba(227,180,72,.55);transform:rotate(3deg)}
+.polaroid button.ph{border:none;padding:0;background:#ddd;cursor:zoom-in;display:block;aspect-ratio:1;overflow:hidden;width:100%}
+.polaroid img{width:100%;height:100%;object-fit:cover;display:block}
+.polaroid figcaption{font-family:var(--f-hand);font-size:19px;line-height:1.25;min-height:1.25em;overflow-wrap:anywhere}
+.polaroid .meta{font-family:var(--f-type);font-size:10.5px;color:#7a7266;display:flex;justify-content:space-between;gap:6px}
+.lightbox{position:fixed;inset:0;z-index:12;background:rgba(10,12,24,.82);display:grid;place-items:center;padding:24px 16px;cursor:zoom-out}
+.lightbox figure{margin:0;background:#fdfcf9;padding:12px 12px 16px;max-width:min(92vw,900px);display:grid;gap:10px}
+.lightbox img{max-width:100%;max-height:75vh;object-fit:contain;display:block}
+.lightbox figcaption{font-family:var(--f-hand);font-size:24px;color:#2a2622;text-align:center}
+
+/* Songs */
+.song-form{gap:10px}
+.songs{display:grid;gap:14px;align-content:start}
+.song{background:var(--card);border-radius:12px;padding:16px 18px;display:grid;grid-template-columns:auto 1fr;gap:4px 14px;box-shadow:0 6px 16px var(--shadow);border:1px solid color-mix(in srgb,var(--line) 60%,transparent)}
+.vinyl{grid-row:span 3;position:relative;width:58px;height:58px;border-radius:50%;align-self:start;box-shadow:0 3px 8px rgba(0,0,0,.28)}
+.vinyl .disc{position:absolute;inset:0;border-radius:50%;background:repeating-radial-gradient(circle,rgba(0,0,0,.16) 0 .6px,transparent .6px 2.2px),var(--disc);animation:spin 5s linear infinite}
+.vinyl .disc::before{content:"";position:absolute;inset:0;border-radius:50%;box-shadow:inset 0 0 0 1.5px rgba(0,0,0,.25),inset 0 0 0 5px rgba(0,0,0,.08)}
+.vinyl .lbl{position:absolute;inset:30%;border-radius:50%;background:var(--label);display:grid;justify-items:center;align-items:start;padding-top:9%;color:var(--lbl-ink,#fff);font-size:7px;line-height:1;box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.35)}
+.vinyl .lbl::after{content:"";position:absolute;left:50%;top:50%;width:4px;height:4px;margin:-2px 0 0 -2px;border-radius:50%;background:#f5efe4;box-shadow:inset 0 0 0 1px rgba(0,0,0,.35)}
+.vinyl::after{content:"";position:absolute;inset:0;border-radius:50%;pointer-events:none;background:conic-gradient(from 35deg,transparent 0 8%,rgba(255,255,255,.42) 12%,transparent 18% 52%,rgba(255,255,255,.32) 61%,transparent 67%)}
+.song:hover .vinyl .disc,.song:focus-within .vinyl .disc{animation-duration:1.6s}
+.vinyl.v0{--disc:conic-gradient(#e86a8a,#f7b8c8,#c2364a,#f4a0b5,#e86a8a);--label:#fff4f6;--lbl-ink:#c2364a}
+.vinyl.v1{--disc:conic-gradient(#2b4f9e,#7fa6ea,#1d2f63,#a9c6f2,#2b4f9e);--label:#ffd25e;--lbl-ink:#1d2f63}
+.vinyl.v2{--disc:conic-gradient(#e3a33a,#ffe08f,#b97a1c,#fff0bf,#e3a33a);--label:#c2364a}
+.vinyl.v3{--disc:conic-gradient(#3a8f6a,#a8e6c2,#25664a,#cdf5dd,#3a8f6a);--label:#fff8ec;--lbl-ink:#25664a}
+.vinyl.v4{--disc:conic-gradient(#8a6ad6,#d4bcff,#5c43a8,#eadcff,#8a6ad6);--label:#ff8fb8}
+.vinyl.v5{--disc:radial-gradient(circle at 30% 30%,#2a2a2a,#111);--label:#e0435c}
+.vinyl.v6{--disc:conic-gradient(#ff6f91 0 50%,#ffb83a 50% 100%);--label:#fff8ec;--lbl-ink:#c2364a}
+.vinyl.v7{--disc:radial-gradient(circle at 70% 30%,#fff 0 .8px,transparent 1.2px) 0 0/9px 9px,radial-gradient(circle at 20% 60%,#ffd25e 0 .7px,transparent 1.1px) 0 0/13px 13px,linear-gradient(135deg,#2a1f5c,#4b2648);--label:#f4e4b6;--lbl-ink:#2a1f5c}
+@keyframes spin{to{transform:rotate(360deg)}}
+.song .st{font-family:var(--f-display);font-size:20px;line-height:1.2;min-width:0;overflow-wrap:anywhere}
+.song .sa{font-size:15px;color:var(--muted)}
+.song .why{grid-column:2;font-family:var(--f-hand);font-size:20px;line-height:1.3;margin:4px 0 0;overflow-wrap:anywhere}
+.song .meta{grid-column:2;display:flex;gap:12px;align-items:center;flex-wrap:wrap;font-family:var(--f-type);font-size:11px;color:var(--muted);margin-top:6px}
+.song .meta a{color:var(--red);font-weight:700}
+.song .x{background:none;border:none;color:var(--muted);cursor:pointer;font-family:var(--f-type);font-size:11px;text-decoration:underline;padding:0}
+
+/* Letter editor (her view) */
+#overlay{z-index:13}
+.editor-sheet{display:grid;gap:16px}
+.editor-sheet label{display:grid;gap:4px;font-family:var(--f-type);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#7a7266;min-width:0}
+.editor-sheet input{background:rgba(255,255,255,.65);color:var(--paper-ink);border-color:#d9d2c3}
+.ed-when span{color:#c2364a;font-size:12px;letter-spacing:.16em}
+.ed-when input{font-family:var(--f-hand);font-size:26px;padding:6px 12px}
+.ed-body{font:inherit;font-family:var(--f-body);font-size:19px;line-height:34px;color:var(--paper-ink);background:transparent;border:1.5px dashed #d9d2c3;border-radius:6px;padding:0 12px;min-height:340px;width:100%;resize:vertical}
+.ed-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px}
+.ed-hint{margin:0;font-size:15px;color:#7a7266;font-style:italic}
+.ed-actions{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.ed-actions .grow{flex:1}
+.ed-actions .link{color:#a3243a}
+.new-env{aspect-ratio:1.55;max-width:100%;border:2px dashed var(--line);border-radius:6px;background:transparent;color:var(--muted);font-family:var(--f-hand);font-size:26px;cursor:pointer;transition:border-color .2s,color .2s}
+.new-env:hover{border-color:var(--red);color:var(--red)}
+
+/* His letters, replies, voice notes */
+.sheet input[type=text]{background:rgba(255,255,255,.65);color:var(--paper-ink);border-color:#d9d2c3}
+.voice-box{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.voice-box audio{height:38px;max-width:100%}
+.voice-box .vb-hint{font-size:14px;color:#7a7266;font-style:italic}
+.voice-box .rec-time{font-family:var(--f-type);font-size:13px;color:#c2364a;display:flex;align-items:center;gap:6px}
+.voice-box .rec-time::before{content:"";width:10px;height:10px;border-radius:50%;background:#e0435c;animation:blink 1s infinite}
+@keyframes blink{50%{opacity:.25}}
+.voice-box .link{color:#7a7266}
+.reply{margin-top:30px;padding-top:22px;border-top:1.5px dashed #d9d2c3;display:grid;gap:12px}
+.reply h3{font-family:var(--f-type);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#c2364a;margin:0;font-weight:400}
+.reacts{display:flex;gap:8px;flex-wrap:wrap}
+.reacts button{font-size:24px;width:48px;height:48px;border-radius:50%;border:1.5px solid #e4dccd;background:#fff;cursor:pointer;transition:transform .15s}
+.reacts button[aria-pressed="true"]{border-color:#c2364a;background:#ffe3e8;transform:scale(1.1)}
+.reply .btn{justify-self:start}
+.reply-view{background:#fff3ec;border:1.5px solid #f0d9cf;border-radius:12px;padding:12px 14px;display:grid;gap:8px;margin-bottom:6px}
+.reply-view .rv-top{display:flex;gap:10px;align-items:center;font-family:var(--f-type);font-size:12px;color:#7a7266}
+.reply-view .rv-emoji{font-size:30px;line-height:1}
+.reply-view .rv-text{font-family:var(--f-hand);font-size:22px;line-height:1.3;margin:0;color:var(--paper-ink);overflow-wrap:anywhere}
+.reply-view audio,.his-voice audio{width:100%;max-width:360px;height:40px}
+.his-voice{margin-top:22px;display:grid;gap:8px}
+.his-voice p{margin:0;font-family:var(--f-hand);font-size:22px;color:#2f6b4f}
+
+/* Date night */
+.date-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:26px 20px;align-items:start}
+.date-grid .wide{grid-column:1/-1}
+.date-box{display:grid;gap:14px;min-width:0}
+.deck-chips{display:flex;flex-wrap:wrap;gap:6px}
+.deck-chips button{font-family:var(--f-type);font-size:11px;letter-spacing:.06em;border:1.5px solid var(--line);background:none;color:var(--muted);border-radius:999px;padding:5px 10px;cursor:pointer}
+.deck-chips button[aria-pressed="true"]{background:var(--red);border-color:var(--red);color:#fff}
+.qcard{position:relative;min-height:190px;border-radius:14px;padding:22px 20px;display:grid;align-content:center;justify-items:center;gap:10px;text-align:center;color:#2a2622;background:var(--qbg,#fff4e8);box-shadow:0 8px 18px var(--shadow),inset 0 0 0 6px rgba(255,255,255,.55)}
+.qcard.flip{animation:cardflip .5s ease}
+@keyframes cardflip{0%{transform:perspective(800px) rotateY(0)}50%{transform:perspective(800px) rotateY(90deg)}100%{transform:perspective(800px) rotateY(0)}}
+.q-deck{font-family:var(--f-type);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#a3243a}
+.q-text{font-family:var(--f-display);font-size:23px;line-height:1.25;margin:0;text-wrap:balance}
+.q-num{font-family:var(--f-type);font-size:11px;color:#7a7266}
+.card-nav{display:flex;justify-content:space-between;gap:10px}
+.card-meta{font-family:var(--f-type);font-size:11px;color:var(--muted);text-align:center;margin:0}
+.tot-progress{font-family:var(--f-type);font-size:12px;color:var(--muted);margin:0}
+.tot-choices{display:grid;grid-template-columns:1fr auto 1fr;gap:10px;align-items:center}
+.tot-choices button{font-family:var(--f-display);font-size:20px;padding:24px 8px;border-radius:14px;border:2px solid var(--line);background:var(--ground);color:var(--ink);cursor:pointer;min-width:0;overflow-wrap:anywhere;transition:transform .15s,border-color .15s}
+.tot-choices button:hover{border-color:var(--red);transform:translateY(-2px)}
+.tot-or{font-family:var(--f-hand);font-size:22px;color:var(--muted)}
+.date-box .link{justify-self:start}
+.tot-score{font-family:var(--f-display);font-size:28px;margin:0}
+.tot-wait{font-size:16px;color:var(--muted);margin:0;line-height:1.45}
+.tot-list{list-style:none;margin:0;padding:0;display:grid;gap:4px}
+.tot-list li{display:grid;grid-template-columns:1fr 1fr 20px;gap:8px;font-size:16px;padding:6px 10px;border-radius:8px;align-items:center}
+.tot-list li.match{background:color-mix(in srgb,var(--red) 12%,transparent)}
+.tot-list .who{font-family:var(--f-type);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);display:block}
+.tot-list .tick{color:var(--red);font-weight:700}
+.ready-dots{display:flex;gap:18px;flex-wrap:wrap}
+.ready-dot{display:flex;align-items:center;gap:7px;font-family:var(--f-type);font-size:12px;color:var(--muted)}
+.ready-dot i{width:12px;height:12px;border-radius:50%;background:var(--line)}
+.ready-dot.on{color:var(--ink)}
+.ready-dot.on i{background:#3aa66a;box-shadow:0 0 0 4px rgba(58,166,106,.2)}
+.movie-status{font-size:17px;margin:0;line-height:1.45}
+.big-btn{font-size:15px;padding:14px 24px;justify-self:start}
+.count-overlay{position:fixed;inset:0;z-index:45;display:grid;place-content:center;justify-items:center;gap:14px;background:rgba(16,20,40,.86);color:#fff;font-family:var(--f-display)}
+.count-overlay b{font-size:min(42vw,240px);line-height:1;font-weight:400;animation:pop .9s ease}
+.count-overlay p{font-family:var(--f-type);letter-spacing:.2em;text-transform:uppercase;font-size:13px;margin:0;color:#f7d6e2}
+@keyframes pop{0%{transform:scale(1.6);opacity:0}30%{opacity:1}100%{transform:scale(1)}}
+.date-box > .btn{justify-self:start}
+.doodle-panel .doodle-wrap{margin-inline:auto}
+.doodle-panel.expanded{position:fixed;inset:0;z-index:30;border-radius:0;margin:0;overflow:auto;
+  padding:calc(14px + env(safe-area-inset-top,0px)) 14px calc(14px + env(safe-area-inset-bottom,0px));background:var(--card);display:grid;align-content:center}
+.doodle-panel.expanded::before{display:none}
+.doodle-panel.expanded .doodle-wrap{max-width:min(100%,calc((100dvh - 150px) * 4 / 3))}
+.doodle-panel.expanded .doodle-tools{justify-content:center}
+.doodle-panel.expanded .doodle-prompt{text-align:center}
+.doodle-panel.expanded.rot{overflow-x:hidden}
+.doodle-panel.expanded.rot .doodle-wrap{--W:min(calc(100dvh - 210px),calc((100vw - 28px) * 4 / 3));width:var(--W);max-width:none;
+  margin:calc(var(--W) * .125) calc((100% - var(--W)) / 2);transform:rotate(90deg)}
+body.no-scroll{overflow:hidden}
+.doodle-wrap{width:100%;max-width:720px;border-radius:12px;overflow:hidden;box-shadow:inset 0 0 0 1.5px var(--line),0 4px 12px var(--shadow)}
+#doodle{display:block;width:100%;max-width:100%;aspect-ratio:4/3;background:#fffdf8;touch-action:none;cursor:crosshair}
+.doodle-tools{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.swatches{display:flex;gap:6px;flex-wrap:wrap}
+.swatch{width:30px;height:30px;border-radius:50%;border:3px solid #fff;box-shadow:0 0 0 1.5px var(--line);cursor:pointer;padding:0}
+.swatch[aria-pressed="true"]{box-shadow:0 0 0 2.5px var(--ink)}
+.doodle-prompt{font-family:var(--f-hand);font-size:21px;color:var(--red);min-height:1.2em}
+@media (max-width:640px){ .qcard{min-height:170px} .q-text{font-size:20px} .tot-choices button{font-size:17px;padding:20px 6px} .tabbar a{font-size:9px} }
+
+/* Notifications */
+.chip-row{position:relative;display:flex;gap:8px;flex-wrap:wrap}
+.notif-banner{display:flex;align-items:center;gap:14px;flex-wrap:wrap;background:var(--card);border:1.5px dashed color-mix(in srgb,var(--red) 45%,transparent);border-radius:14px;padding:14px 18px}
+.notif-banner p{margin:0;flex:1;min-width:180px;font-size:17px;line-height:1.4}
+.nb-bell{font-size:26px}
+.nb-actions{display:flex;gap:12px;align-items:center}
+.nf-status{margin:0;font-size:17px;line-height:1.5;color:var(--paper-ink)}
+.nf-actions{display:flex;gap:10px;flex-wrap:wrap}
+.nf-prefs{display:grid;gap:2px}
+.nf-prefs label{display:flex;align-items:center;gap:12px;padding:9px 2px;border-bottom:1px dotted #d9d2c3;font-family:var(--f-body);font-size:17px;text-transform:none;letter-spacing:0;color:var(--paper-ink);cursor:pointer}
+.nf-prefs input{width:20px;height:20px;accent-color:#c2364a;flex:none}
+#notif .link{justify-self:start;color:#7a7266}
+
+/* Fridge */
+.composer{display:grid;gap:10px}
+.composer-row{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.composer-row .grow{flex:1}
+.preview{width:52px;height:52px;object-fit:cover;border-radius:6px;box-shadow:0 2px 6px var(--shadow)}
+.fridge .wall{position:relative;margin-top:8px;padding:34px clamp(14px,3vw,28px) 30px clamp(14px,3vw,28px);border-radius:16px;gap:34px 22px;
+  grid-template-columns:repeat(auto-fill,minmax(170px,1fr));align-items:start;
+  background:linear-gradient(100deg,var(--fridge) 0%,var(--fridge-2) 100%);
+  box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--ink) 8%,transparent),inset 0 18px 30px -20px rgba(255,255,255,.6)}
+.fridge .wall::after{content:"";position:absolute;right:10px;top:40px;width:9px;height:140px;border-radius:6px;
+  background:linear-gradient(90deg,#b9c0c9,#eef1f4 45%,#a9b1bb);box-shadow:0 2px 4px rgba(0,0,0,.15)}
+.fridge .sticky::before,.fridge .polaroid::before{display:none}
+.fridge .sticky,.fridge .polaroid{margin-top:6px}
+.magnet{position:absolute;top:-16px;left:50%;transform:rotate(var(--mr,0deg));z-index:2;filter:drop-shadow(0 3px 2px rgba(0,0,0,.28))}
+.magnet svg{width:100%;height:100%;display:block}
+/* Sticky notes, picked per note */
+.sticky.note-0{background:#fff1a8}
+.sticky.note-1{background:#ffd3de}
+.sticky.note-2{background:#cdf3dc}
+.sticky.note-3{background:#d3e6ff}
+.sticky.note-4{background:#e6dcff}
+.sticky.note-5{background:#ffdcc4}
+.sticky.note-6{background:#fffdf7 linear-gradient(90deg,transparent 22px,rgba(224,67,92,.35) 22px 23.5px,transparent 23.5px),#fffdf7;background-image:linear-gradient(90deg,transparent 22px,rgba(224,67,92,.35) 22px 23.5px,transparent 23.5px),repeating-linear-gradient(transparent 0 23px,rgba(79,127,214,.28) 23px 24px);padding-left:30px}
+.sticky.note-7{background-color:#f6f1e4;background-image:linear-gradient(rgba(120,110,90,.13) 1px,transparent 1px),linear-gradient(90deg,rgba(120,110,90,.13) 1px,transparent 1px);background-size:14px 14px}
+.sticky.note-8{background:#ffe9a0;clip-path:polygon(0 0,100% 0,100% calc(100% - 22px),calc(100% - 22px) 100%,0 100%)}
+.sticky.note-8::after{content:"";position:absolute;right:0;bottom:0;width:22px;height:22px;background:linear-gradient(135deg,#f0d77a 50%,transparent 50%)}
+/* Polaroid frames, picked per photo */
+.polaroid.frame-0{background:#fdfcf9}
+.polaroid.frame-1{background:#ffd9e4}
+.polaroid.frame-2{background:#d6f2e3}
+.polaroid.frame-3{background:#fff1b8}
+.polaroid.frame-4{background:#e4d9ff}
+.polaroid.frame-5{background:#d6e8ff}
+.polaroid.frame-6{background:#fff;background-image:linear-gradient(90deg,rgba(255,111,145,.28) 50%,transparent 50%),linear-gradient(rgba(255,111,145,.28) 50%,transparent 50%);background-size:12px 12px}
+.polaroid.frame-7{background:#fff6f0;background-image:radial-gradient(#ff8fb8 1.6px,transparent 1.8px),radial-gradient(#7fb4ff 1.6px,transparent 1.8px);background-size:14px 14px;background-position:0 0,7px 7px}
+.polaroid.frame-8{background:repeating-linear-gradient(135deg,#fff 0 7px,#cfe6ff 7px 14px)}
+.polaroid.frame-9{background:#ffe7c9;background-image:radial-gradient(circle at 50% 0,#ffb47a 2.2px,transparent 2.6px);background-size:12px 10px}
+.polaroid[class*="frame-"] figcaption{color:#2a2622}
+.polaroid.frame-6 figcaption,.polaroid.frame-7 figcaption,.polaroid.frame-8 figcaption,.polaroid.frame-9 figcaption{background:rgba(255,255,255,.82);border-radius:4px;padding:2px 6px}
+.polaroid.frame-6 .meta,.polaroid.frame-7 .meta,.polaroid.frame-8 .meta,.polaroid.frame-9 .meta{background:rgba(255,255,255,.82);border-radius:4px;padding:2px 6px}
+.polaroid figcaption:empty{display:none}
+.fridge .empty{background:color-mix(in srgb,var(--card) 70%,transparent)}
+
+/* Songs in a panel */
+.songs .song{background:none;box-shadow:none;border:none;border-radius:0;padding:10px 0;border-bottom:1px dotted var(--line)}
+.songs .vinyl{width:50px;height:50px}
+.songs .song .st{font-size:18px}
+.songs .song .why{font-size:18px}
+.songs .muted{padding:4px 0}
+.song-details{display:grid;gap:10px}
+.song-details summary{list-style:none;justify-self:start;display:inline-block}
+.song-details summary::-webkit-details-marker{display:none}
+.song-details[open] summary{margin-bottom:10px}
+.song-form{display:grid;gap:10px}
+
+/* Timeline */
+.story{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(260px,1fr);gap:24px;align-items:start}
+@media (max-width:700px){.story{grid-template-columns:1fr}}
+.timeline{list-style:none;margin:0;padding:0 0 0 28px;position:relative;display:grid;gap:22px;min-width:0}
+.timeline::before{content:"";position:absolute;left:8px;top:6px;bottom:6px;border-left:2px dashed color-mix(in srgb,var(--red) 55%,transparent)}
+.timeline li{position:relative;display:grid;gap:4px}
+.timeline li:not(.empty)::before{content:"♥";position:absolute;left:-28px;top:0;width:18px;height:18px;display:grid;place-items:center;font-size:13px;color:#fff;background:var(--red);border-radius:50%}
+.timeline .td{font-family:var(--f-type);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.timeline .tt{font-family:var(--f-display);font-size:22px;line-height:1.2;overflow-wrap:anywhere}
+.timeline .tn{font-size:17px;line-height:1.5;margin:0;overflow-wrap:anywhere}
+.timeline .tm{font-family:var(--f-type);font-size:11px;color:var(--muted);display:flex;gap:10px}
+.timeline .tm button{background:none;border:none;color:inherit;text-decoration:underline;cursor:pointer;font:inherit;padding:0}
+.timeline .since{font-family:var(--f-hand);font-size:22px;color:var(--red)}
+
+/* Toast, letter, hearts */
+.toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--ground);font-family:var(--f-type);font-size:13px;padding:10px 16px;border-radius:999px;z-index:60;max-width:calc(100% - 32px);text-align:center}
+.overlay{position:fixed;inset:0;background:color-mix(in srgb,var(--ground) 70%,black 30%);z-index:10;overflow-y:auto;padding:calc(24px + env(safe-area-inset-top,0px)) 16px calc(24px + env(safe-area-inset-bottom,0px));display:grid;place-items:start center}
+.sheet{width:100%;max-width:620px;margin-block:4vh;background:var(--paper);color:var(--paper-ink);border-radius:3px;box-shadow:0 30px 60px rgba(0,0,0,.35);padding:clamp(28px,6vw,56px);position:relative;background-image:repeating-linear-gradient(transparent 0 33px,rgba(43,79,158,.12) 33px 34px);background-position:0 18px;animation:unfold .55s cubic-bezier(.2,.8,.2,1)}
+@keyframes unfold{from{transform:translateY(30px) scaleY(.6);opacity:0}to{transform:none;opacity:1}}
+.sheet .when{font-family:var(--f-type);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#c2364a;margin:0 0 6px}
+.sheet h2{font-family:var(--f-hand);font-weight:400;font-size:clamp(28px,5vw,38px);line-height:1.15;margin:0 0 24px;text-wrap:balance}
+.sheet .body{font-size:19px;line-height:34px;white-space:pre-wrap;margin:0}
+.sheet .sign{font-family:var(--f-hand);font-size:26px;margin-top:28px}
+.sheet .ps{font-style:italic;font-size:17px;margin-top:18px;color:#5d564d}
+.close{position:absolute;top:14px;right:14px;width:40px;height:40px;border-radius:50%;border:1.5px solid #cfc6b3;background:var(--paper);font-family:var(--f-type);font-size:18px;color:var(--paper-ink);cursor:pointer}
+.nav{display:flex;justify-content:space-between;gap:12px;margin-top:32px;flex-wrap:wrap}
+.nav button{font-family:var(--f-type);font-size:13px;background:none;border:none;color:#2b4f9e;cursor:pointer;padding:6px 0}
+.heart{position:fixed;z-index:20;pointer-events:none;color:var(--red);font-size:22px;animation:float 1.6s ease-out forwards}
+@keyframes float{from{opacity:1;transform:translate(0,0) scale(.6)}to{opacity:0;transform:translate(var(--dx),-180px) scale(1.2) rotate(var(--r))}}
+footer{font-family:var(--f-type);font-size:12px;color:var(--muted);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+footer button{font:inherit;color:inherit;background:none;border:none;text-decoration:underline;cursor:pointer;padding:0}
+/* Bottom tab bar (phones only) */
+.tabbar{display:none}
+[id^="sec-"]{scroll-margin-top:16px}
+
+/* ---------- Phone layout ---------- */
+@media (max-width:640px){
+  html{scroll-behavior:smooth}
+  body{padding-left:12px;padding-right:12px}
+  .wrap{gap:32px;padding-block:14px calc(96px + env(safe-area-inset-bottom,0px))}
+  .section-head{margin-bottom:14px}
+  .section-head h2{font-size:26px}
+  .section-head p{font-size:15px}
+
+  .sky{padding:26px 20px 24px;border-radius:16px}
+  .sky .postmark{font-size:10px;letter-spacing:.14em}
+  .sky .postmark span:not(.pm){display:none}
+  .sky h1{font-size:44px}
+  .sky .lede{font-size:16px;padding-right:44px}
+  .sky-whisper{font-size:20px}
+  .moon{width:44px;top:18px;right:18px}
+
+  .ticket-main{padding:18px}
+  .route{font-size:11px;gap:8px}
+  .unit b{font-size:34px}
+  .clock{gap:14px}
+  .ticket-label{font-size:21px}
+  .visit-form .addrow{justify-content:flex-start}
+
+  .row{gap:22px}
+  .panel{padding:18px 16px}
+  .zone .t{font-size:24px}
+  .zone .who{font-size:17px}
+  .zone .what{font-size:13px}
+  .heartbtn{width:72px;height:72px;font-size:30px}
+  .pocket-note{font-size:20px;min-height:0}
+
+  /* Envelopes: two to a row */
+  .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 12px}
+  .env-body{padding:6px}
+  .env-inner{padding:10px}
+  .env{aspect-ratio:1.3}
+  .new-env{aspect-ratio:1.3}
+  .flap{left:6px;right:6px;top:6px;height:40%}
+  .seal{width:30px;height:30px;margin-left:-15px;margin-top:-15px;font-size:13px;top:calc(40% + 2px)}
+  .stamp{top:11px;right:11px;width:24px;height:29px;outline-width:2px}
+  .stamp .sg{font-size:12px;line-height:1}
+  .stamp .sa{display:none}
+  .to{font-size:8.5px;letter-spacing:.12em}
+  .label{font-size:15px;line-height:1.15}
+  .tag{top:10px;left:10px;font-size:8px;padding:1px 4px;letter-spacing:.08em}
+  .new-env{font-size:19px}
+
+  /* Fridge: two items across */
+  .fridge .wall{grid-template-columns:repeat(2,minmax(0,1fr));gap:30px 14px;padding:28px 14px 20px}
+  .fridge .wall::after{display:none}
+  .sticky{min-height:110px;padding:14px 12px 10px}
+  .sticky p{font-size:17px}
+  .polaroid{padding:7px 7px 9px;gap:6px}
+  .polaroid figcaption{font-size:16px}
+  .sticky .meta,.polaroid .meta{font-size:9.5px}
+  .composer-row{gap:10px}
+  .composer-row .btn{flex:1 0 auto}
+
+  .plans .txt{font-size:16px}
+  .timeline .tt{font-size:20px}
+
+  .sheet{margin-block:8px;padding:56px 20px 28px}
+  .sheet .body{font-size:18px;line-height:32px}
+  .ed-body{font-size:18px;line-height:32px;min-height:46vh}
+  .ed-actions .btn{flex:1}
+
+  /* Tab bar */
+  .tabbar{display:grid;grid-template-columns:repeat(6,1fr);position:fixed;left:0;right:0;bottom:0;z-index:9;
+    padding:6px 6px calc(6px + env(safe-area-inset-bottom,0px));
+    background:color-mix(in srgb,var(--card) 88%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+    border-top:1px solid color-mix(in srgb,var(--line) 70%,transparent)}
+  .tabbar a{display:grid;justify-items:center;gap:2px;padding:6px 0;color:var(--muted);text-decoration:none;font-family:var(--f-type);font-size:10px;letter-spacing:.06em;border-radius:10px;-webkit-tap-highlight-color:transparent}
+  .tabbar svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+  .tabbar a.on{color:var(--red)}
+  .tabbar a.on svg{fill:color-mix(in srgb,var(--red) 18%,transparent)}
+  .toast{bottom:calc(84px + env(safe-area-inset-bottom,0px))}
+  footer{padding-bottom:8px}
+}
+@media (max-width:360px){
+  .label{font-size:13.5px}
+  .unit b{font-size:28px}
+}
+.heart-rain{position:fixed;inset:0;pointer-events:none;z-index:40;overflow:hidden}
+.heart-rain span{position:absolute;top:-8vh;line-height:1;animation-name:heartfall,heartsway;animation-timing-function:cubic-bezier(.3,.1,.6,1),ease-in-out;animation-fill-mode:both,none;animation-iteration-count:1,infinite;animation-direction:normal,alternate;text-shadow:0 2px 4px rgba(0,0,0,.12)}
+@keyframes heartfall{0%{transform:translateY(0) rotate(0);opacity:0}8%{opacity:1}85%{opacity:1}100%{transform:translateY(118vh) rotate(var(--spin));opacity:0}}
+@keyframes heartsway{from{margin-left:calc(var(--sway) * -1)}to{margin-left:var(--sway)}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.heart,.heart-rain{display:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<div class="gate" id="gate" hidden>
+  <canvas id="gate-stars" aria-hidden="true"></canvas>
+  <form class="gate-card" id="gate-form">
+    <p class="eyebrow" style="color:#cdc5e4">Par Avion · for two</p>
+    <h1>Open when…</h1>
+    <p>Who's here?</p>
+    <div class="whos">
+      <button type="button" data-who="her" aria-pressed="false">I write the letters</button>
+      <button type="button" data-who="him" aria-pressed="false">I read the letters</button>
+    </div>
+    <p>And our secret word:</p>
+    <div class="pw">
+      <input type="password" id="gate-word" placeholder="secret word" autocomplete="current-password" aria-label="Secret word">
+      <button type="button" class="eye" id="gate-eye" aria-label="Show secret word" aria-pressed="false">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/>
+          <line class="slash" x1="3" y1="3" x2="21" y2="21"/>
+        </svg>
+      </button>
+    </div>
+    <div id="gate-pin-wrap" hidden style="display:grid;gap:10px">
+      <p>And your writer PIN (just for you):</p>
+      <input type="password" id="gate-pin" inputmode="numeric" pattern="[0-9]*" maxlength="8" placeholder="4–8 numbers" autocomplete="off" aria-label="Writer PIN">
+      <p class="pin-note" id="gate-pin-note">The first time you sign in as the writer, the PIN you type becomes yours.</p>
+    </div>
+    <div class="err" id="gate-err" role="alert"></div>
+    <button class="btn solid" type="submit" id="gate-go">Come in</button>
+    <div id="gate-new" hidden style="display:grid;gap:10px">
+      <p>That word isn't set up yet. Is this the first time either of you has used it? Pick something only you two would know, at least 6 letters.</p>
+      <button class="btn solid" type="button" id="gate-create">Yes, make this our word</button>
+      <button class="link" type="button" id="gate-retry">No, let me retype it</button>
+    </div>
+  </form>
+</div>
+
+<div class="wrap" id="app">
+  <header class="sky" id="sec-home">
+    <canvas id="stars" aria-hidden="true"></canvas>
+    <div class="moon" aria-hidden="true"></div>
+    <div class="sky-inner">
+      <div class="postmark"><span class="pm">Par Avion</span><span>Sealed with love · Open one at a time</span></div>
+      <h1>Open when…</h1>
+      <p class="lede">A packet of letters for the days in between, plus a little corner that belongs to both of us.</p>
+      <p class="sky-whisper">Same sky, same moon. Just a little apart.</p>
+      <div class="chip-row"><button class="who-chip" id="who-chip" type="button" hidden></button><button class="who-chip" id="bell" type="button" hidden>🔔 Notifications</button></div>
+    </div>
+  </header>
+
+  <div class="notif-banner" id="notif-banner" hidden>
+    <span class="nb-bell" aria-hidden="true">🔔</span>
+    <p id="nb-text">Want a buzz on your phone when something happens here?</p>
+    <div class="nb-actions"><button class="btn solid" type="button" id="nb-on">Turn on notifications</button><button class="link" type="button" id="nb-later">Not now</button></div>
+  </div>
+
+  <section class="ticket" aria-label="Countdown to our next visit">
+    <div class="ticket-main">
+      <div class="ticket-top">
+        <p class="eyebrow">Road trip ticket · next visit</p>
+        <button class="link" id="visit-edit" type="button" hidden>Change date</button>
+      </div>
+      <div class="route"><span id="from"></span><span class="line" aria-hidden="true"></span><span id="to"></span></div>
+      <div id="countdown"></div>
+      <form class="visit-form" id="visit-form" hidden>
+        <label>Date and time (Champaign time)<input type="datetime-local" id="visit-date" required></label>
+        <label>Says<input type="text" id="visit-label" maxlength="60"></label>
+        <div class="addrow"><button class="btn solid" type="submit">Save</button><button class="link" type="button" id="visit-cancel">Cancel</button></div>
+      </form>
+    </div>
+    <div class="ticket-stub">
+      <span class="eyebrow">Arriving</span>
+      <span class="big" id="arrive-date"></span>
+      <span class="eyebrow" id="arrive-time"></span>
+    </div>
+  </section>
+
+  <div class="row">
+    <section class="panel" aria-label="Our clocks">
+      <p class="eyebrow">Right now</p>
+      <div class="zones" id="zones"></div>
+    </section>
+    <section class="panel" aria-label="Thinking of you">
+      <p class="eyebrow">Thinking of you</p>
+      <button class="heartbtn" id="tap" type="button" aria-label="Send a thinking-of-you heart" disabled>♥</button>
+      <p class="muted" id="tap-note">Tap the heart whenever you think of each other. The other person sees it pop up.</p>
+    </section>
+    <section class="panel" aria-label="Pocket notes">
+      <p class="eyebrow">For your pocket</p>
+      <p class="pocket-note" id="pocket">Tap the button for a little note from your person.</p>
+      <p class="muted" id="pocket-from" hidden></p>
+      <button class="btn" id="pocket-btn" type="button" style="justify-self:start">Give me a little note</button>
+      <details class="pocket-manage" id="pocket-manage" hidden>
+        <summary id="pocket-summary">Tuck a note in their pocket</summary>
+        <form class="addrow" id="pocket-form">
+          <input type="text" id="pocket-input" maxlength="200" placeholder="A short note they'll find later" aria-label="New pocket note">
+          <button class="btn solid" type="submit">Add</button>
+        </form>
+        <ul class="pocket-list" id="pocket-list"></ul>
+      </details>
+    </section>
+  </div>
+
+  <section id="sec-letters">
+    <div class="section-head"><h2>The envelopes</h2><span class="count" id="count"></span></div>
+    <div class="grid" id="grid"></div>
+  </section>
+
+  <section id="sec-corner">
+    <div class="section-head"><h2>Our little corner</h2><p id="corner-note">Things we both get to write in.</p></div>
+    <div class="row" style="grid-template-columns:repeat(auto-fit,minmax(300px,1fr))">
+      <div class="panel fridge" id="sec-fridge" style="grid-column:1/-1">
+        <p class="eyebrow">Our fridge</p>
+        <form class="composer shared-form" id="wall-form">
+          <textarea id="wall-input" maxlength="280" placeholder="Leave a note, or add a photo and write a caption…" aria-label="Note or photo caption"></textarea>
+          <div class="composer-row">
+            <label class="filepick" for="photo-file"><span id="photo-file-label">+ Add a photo</span><input type="file" id="photo-file" accept="image/*"></label>
+            <img id="photo-preview" class="preview" hidden alt="Selected photo">
+            <button class="link" type="button" id="photo-clear" hidden>remove photo</button>
+            <span class="grow"></span>
+            <button class="btn solid" type="submit" id="wall-submit">Stick it</button>
+          </div>
+        </form>
+        <div class="wall" id="wall"></div>
+      </div>
+      <div class="panel" id="sec-lists">
+        <p class="eyebrow">Things to do on our next visit</p>
+        <ul class="plans" id="plans"></ul>
+        <form class="addrow shared-form" id="plans-form">
+          <input type="text" id="plans-input" maxlength="120" placeholder="Add an idea, like 'bake cookies'" aria-label="New plan">
+          <button class="btn solid" type="submit">Add</button>
+        </form>
+      </div>
+      <div class="panel">
+        <p class="eyebrow">Our someday list</p>
+        <ul class="plans" id="someday"></ul>
+        <form class="addrow shared-form" id="someday-form">
+          <input type="text" id="someday-input" maxlength="120" placeholder="Places to go, things to try together" aria-label="New someday idea">
+          <button class="btn solid" type="submit">Add</button>
+        </form>
+      </div>
+      <div class="panel">
+        <p class="eyebrow">Song swap</p>
+        <div class="songs" id="songs"></div>
+        <details class="song-details shared-form" id="song-details">
+          <summary class="btn">+ Send a song</summary>
+          <form class="song-form" id="song-form">
+            <input type="text" id="song-title" maxlength="80" placeholder="Song title" aria-label="Song title" required>
+            <input type="text" id="song-artist" maxlength="80" placeholder="Artist" aria-label="Artist">
+            <input type="text" id="song-link" maxlength="300" placeholder="Spotify, Apple Music or YouTube link" aria-label="Song link">
+            <textarea id="song-why" maxlength="240" placeholder="Why it made you think of them" aria-label="Why this song"></textarea>
+            <button class="btn solid" type="submit" style="justify-self:start">Send it</button>
+          </form>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section id="sec-date">
+    <div class="section-head"><h2>Date night</h2><p>Things to do together on a call.</p></div>
+    <div class="date-grid">
+      <div class="panel"><p class="eyebrow">Conversation cards</p><div class="date-box" id="date-cards"></div></div>
+      <div class="panel"><p class="eyebrow">This or That</p><div class="date-box" id="date-tot"></div></div>
+      <div class="panel"><p class="eyebrow">Movie night sync</p><div class="date-box" id="date-movie"></div></div>
+    </div>
+  </section>
+
+  <section id="sec-story">
+    <div class="section-head"><h2>Our story so far</h2><p>The moments we never want to forget.</p></div>
+    <div class="story">
+      <ol class="timeline" id="timeline"></ol>
+      <form class="panel shared-form" id="memory-form">
+        <p class="eyebrow">Add a memory</p>
+        <input type="date" id="memory-date" aria-label="Date" required>
+        <input type="text" id="memory-title" maxlength="80" placeholder="What happened, like 'Our first date'" aria-label="Memory title" required>
+        <textarea id="memory-note" maxlength="400" placeholder="A few words about it (optional)" aria-label="Memory details"></textarea>
+        <button class="btn solid" type="submit" style="justify-self:start">Add to our story</button>
+      </form>
+    </div>
+  </section>
+
+  <section id="sec-doodle">
+    <div class="section-head"><h2>Doodle together</h2><p>Draw at the same time and watch each other's lines appear.</p></div>
+    <div class="panel doodle-panel" id="doodle-panel"><div class="date-box" id="date-doodle"></div></div>
+  </section>
+
+  <footer>
+    <span>Miles apart, never far.</span>
+    <button id="lock" type="button">Lock this device</button>
+  </footer>
+</div>
+<nav class="tabbar" id="tabbar" aria-label="Sections">
+  <a href="#sec-home" data-sec="sec-home"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg><span>Home</span></a>
+  <a href="#sec-letters" data-sec="sec-letters"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5.5" width="18" height="13" rx="2"/><path d="M3.5 7l8.5 6 8.5-6"/></svg><span>Letters</span></a>
+  <a href="#sec-fridge" data-sec="sec-fridge"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.4-7-9.6A3.9 3.9 0 0 1 12 8a3.9 3.9 0 0 1 7 2.4C19 15.6 12 20 12 20z"/></svg><span>Fridge</span></a>
+  <a href="#sec-lists" data-sec="sec-lists"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 7h11M9 12h11M9 17h11"/><path d="M3.5 7l1.2 1.2L7 6M3.5 12l1.2 1.2L7 11M3.5 17l1.2 1.2L7 16"/></svg><span>Lists</span></a>
+  <a href="#sec-date" data-sec="sec-date"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="2.5"/><path d="M3.5 9.5h17M8 3v4M16 3v4"/><path d="M12 17.6s-3-1.9-3-4a1.5 1.5 0 0 1 3-.6 1.5 1.5 0 0 1 3 .6c0 2.1-3 4-3 4z"/></svg><span>Date</span></a>
+  <a href="#sec-story" data-sec="sec-story"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.5 5.2 5.7.8-4.1 4 1 5.6L12 16.4l-5.1 2.7 1-5.6-4.1-4 5.7-.8z"/></svg><span>Story</span></a>
+</nav>
+
+<div class="overlay" id="overlay" hidden>
+  <article class="sheet" role="dialog" aria-modal="true" aria-labelledby="l-title">
+    <button class="close" id="close" type="button" aria-label="Close letter">×</button>
+    <p class="when">Open when</p>
+    <h2 id="l-title"></h2>
+    <p class="body" id="l-body"></p>
+    <div class="sign" id="l-sign"></div>
+    <p class="ps" id="l-ps" hidden></p>
+    <div id="l-extra"></div>
+    <div class="nav"><button type="button" id="prev">← previous letter</button><button type="button" id="next">next letter →</button></div>
+  </article>
+</div>
+<div class="overlay" id="editor" hidden>
+  <form class="sheet editor-sheet" id="editor-form" role="dialog" aria-modal="true" aria-labelledby="ed-heading">
+    <button class="close" type="button" id="ed-close" aria-label="Close editor">×</button>
+    <p class="when" id="ed-heading">Write a letter</p>
+    <div id="ed-reply"></div>
+    <label class="ed-when"><span>Open when…</span><input type="text" id="ed-when" maxlength="80" required placeholder="you miss me"></label>
+    <textarea id="ed-body" class="ed-body" placeholder="Dear…" aria-label="Your letter"></textarea>
+    <div class="ed-grid">
+      <label>Sign-off<input type="text" id="ed-sign" maxlength="60"></label>
+      <label>P.S. (optional)<input type="text" id="ed-ps" maxlength="200"></label>
+      <label>Keep sealed until (optional)<input type="date" id="ed-unlock"></label>
+    </div>
+    <p class="ed-hint">Only you can see this editor. Leave the letter blank and the envelope stays sealed for him.</p>
+    <div class="ed-actions">
+      <button class="btn solid" type="submit" id="ed-save">Save letter</button>
+      <button class="btn" type="button" id="ed-preview">Preview</button>
+      <span class="grow"></span>
+      <button class="link" type="button" id="ed-delete">Delete envelope</button>
+    </div>
+  </form>
+</div>
+<div class="overlay" id="notif" hidden>
+  <div class="sheet editor-sheet" role="dialog" aria-modal="true" aria-labelledby="nf-h">
+    <button class="close" type="button" id="nf-close" aria-label="Close">×</button>
+    <p class="when" id="nf-h">Notifications</p>
+    <p class="nf-status" id="nf-status"></p>
+    <div class="nf-actions"><button class="btn solid" type="button" id="nf-on">Turn on for this phone</button><button class="btn" type="button" id="nf-test">Send me a test</button></div>
+    <div class="nf-prefs" id="nf-prefs"></div>
+    <button class="link" type="button" id="nf-off">Turn off on this phone</button>
+  </div>
+</div>
+<div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="Photo">
+  <figure><img id="lb-img" alt=""><figcaption id="lb-cap"></figcaption></figure>
+</div>
+<div class="toast" id="toast" hidden></div>
+
+<script type="module">
+/* =================== 1. PASTE YOUR FIREBASE CONFIG HERE =================== */
+const FIREBASE_CONFIG = {
+  apiKey: "AIzaSyDltNH9u8_JhueW1VCcKPo90dxNpQFvk4M",
+  authDomain: "open-when-c01b7.firebaseapp.com",
+  projectId: "open-when-c01b7",
+  storageBucket: "open-when-c01b7.firebasestorage.app",
+  messagingSenderId: "100618602931",
+  appId: "1:100618602931:web:81b549d9d237b4dc5e23c6"
+};
+
+/* =================== 2. LETTERS & SETTINGS =================== */
+const VISIT_DEFAULT = { date: "2026-11-20T14:00:00-06:00", label: "until I get to hug you again" };
+const ROUTE = { from: "Vincennes", to: "Champaign" };
+const CLOCKS = { her: { city: "Champaign", tz: "America/Chicago" }, him: { city: "Vincennes", tz: "America/Indiana/Vincennes" } };
+const SIGN = "Love always, me";
+
+// Names used in notifications (e.g. "Jay is thinking of you ♥")
+const NAMES = { her: "Your girl", him: "Jay" };
+// Public half of the notification key (the private half lives in Netlify settings)
+const VAPID_PUBLIC_KEY = "BMx8Tbb_SiD9HaMKr8_Q5Byov57XngIgKKzCsx7T1Phu7MD7MeLZb6cdnIuP7Bm0OUpRZkJtTQcK1yJ1vrLbx9s";
+
+// Starting envelopes. Once you write a letter on the page, your letters live privately in your database instead.
+const DEFAULT_LETTERS = [
+  { when: "you miss me" },
+  { when: "you can't fall asleep" },
+  { when: "you've had a bad day" },
+  { when: "you need a laugh" },
+  { when: "you're proud of yourself" },
+  { when: "we just hung up the phone" },
+  { when: "you're feeling stressed" },
+  { when: "you want to know why I love you" },
+  { when: "we've had a fight" },
+  { when: "you feel like giving up on something" },
+  { when: "it's your birthday", unlock: "2027-02-28" },
+  { when: "it's the night before I see you" },
+];
+/* ========================================================================== */
+
+const $ = id => document.getElementById(id);
+const pad = n => String(n).padStart(2,"0");
+const LS = { get(k){ try{ return localStorage.getItem(k); }catch(e){ return null; } }, set(k,v){ try{ localStorage.setItem(k,v); }catch(e){} }, del(k){ try{ localStorage.removeItem(k); }catch(e){} } };
+let toastTimer;
+function toast(msg){ const t=$("toast"); t.textContent=msg; t.hidden=false; clearTimeout(toastTimer); toastTimer=setTimeout(()=>t.hidden=true,3000); }
+function hearts(x,y,n=12){
+  if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  for (let k=0;k<n;k++){ const h=document.createElement("span"); h.className="heart"; h.textContent=Math.random()<.7?"♥":"✦";
+    h.style.left=(x-10)+"px"; h.style.top=(y-10)+"px"; h.style.setProperty("--dx",(Math.random()*200-100)+"px"); h.style.setProperty("--r",(Math.random()*60-30)+"deg");
+    h.style.animationDelay=(Math.random()*.25)+"s"; h.style.fontSize=(14+Math.random()*16)+"px"; document.body.appendChild(h); setTimeout(()=>h.remove(),2000); }
+}
+function heartRain(n=70){
+  if(matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  const box=document.createElement("div"); box.className="heart-rain"; box.setAttribute("aria-hidden","true");
+  const shapes=["♥","♥","♥","❤","♡","✦"], cols=["#e0435c","#ff6f91","#ff9ec0","#c2364a","#ffb3c7","#f7d6e2"];
+  for(let i=0;i<n;i++){ const h=document.createElement("span"); h.textContent=shapes[i%shapes.length];
+    h.style.left=(Math.random()*100)+"vw"; h.style.color=cols[i%cols.length];
+    h.style.fontSize=(14+Math.random()*22)+"px";
+    h.style.animationDuration=(2.6+Math.random()*2.4)+"s,"+(1.2+Math.random()*1.4)+"s";
+    h.style.animationDelay=(Math.random()*1.6)+"s,0s";
+    h.style.setProperty("--sway",(Math.random()*60-30)+"px"); h.style.setProperty("--spin",(Math.random()*360-180)+"deg");
+    box.append(h); }
+  document.body.append(box); setTimeout(()=>box.remove(),7000);
+}
+function ago(ts){ const s=Math.max(0,Math.floor((Date.now()-ts)/1000)); if(s<60)return"just now"; const m=Math.floor(s/60); if(m<60)return m+" min ago"; const h=Math.floor(m/60); if(h<24)return h+(h===1?" hour ago":" hours ago"); const d=Math.floor(h/24); return d+(d===1?" day ago":" days ago"); }
+const shortDate = ts => new Date(ts).toLocaleDateString(undefined,{month:"short",day:"numeric"});
+function emptyBox(msg){ const e=document.createElement("div"); e.className="empty"; e.textContent=msg; return e; }
+
+/* ---------- Stars ---------- */
+function starfield(c){
+  const ctx=c.getContext("2d"); let stars=[],shoot=null,W=0,H=0; const still=matchMedia("(prefers-reduced-motion: reduce)").matches;
+  function size(){ const r=c.getBoundingClientRect(),d=devicePixelRatio||1; W=r.width;H=r.height; c.width=W*d;c.height=H*d; ctx.setTransform(d,0,0,d,0,0);
+    stars=Array.from({length:Math.round(W*H/2600)},()=>({x:Math.random()*W,y:Math.random()*H,r:Math.random()*1.3+.3,p:Math.random()*6.28,s:.5+Math.random()*1.5})); }
+  function draw(t){ ctx.clearRect(0,0,W,H);
+    for(const s of stars){ ctx.globalAlpha=still?.7:.35+.65*(.5+.5*Math.sin(s.p+t/1000*s.s)); ctx.fillStyle="#fff"; ctx.beginPath(); ctx.arc(s.x,s.y,s.r,0,6.28); ctx.fill(); }
+    if(!still){ if(!shoot&&Math.random()<.003) shoot={x:Math.random()*W*.6,y:Math.random()*H*.4,life:0};
+      if(shoot){ shoot.life++; const L=shoot.life,x=shoot.x+L*7,y=shoot.y+L*3; const g=ctx.createLinearGradient(x-70,y-30,x,y); g.addColorStop(0,"rgba(255,255,255,0)"); g.addColorStop(1,"rgba(255,255,255,.9)");
+        ctx.globalAlpha=Math.max(0,1-L/45); ctx.strokeStyle=g; ctx.lineWidth=1.6; ctx.beginPath(); ctx.moveTo(x-70,y-30); ctx.lineTo(x,y); ctx.stroke(); if(L>45) shoot=null; }
+      requestAnimationFrame(draw); }
+    ctx.globalAlpha=1; }
+  size(); addEventListener("resize",size); requestAnimationFrame(draw);
+}
+starfield($("stars"));
+/* Washi tape: give every panel a different look */
+document.querySelectorAll(".panel").forEach((p,i)=>{ const k=(i*7+3)%10;
+  p.dataset.tape=k; p.style.setProperty("--tr",[-4,2.5,-1.5,3.5,-2.5,1,-3,4,-1,2][(i*3)%10]+"deg");
+  p.style.setProperty("--tw",[86,72,100,64,92,78,108,70,96,82][(i*5+1)%10]+"px");
+  p.style.setProperty("--tx",[-30,18,0,-12,26,-22,10,30,-6,14][(i*7)%10]+"px"); });
+
+/* ---------- Who + countdown + clocks ---------- */
+let me = LS.get("ow-who");         // "her" | "him"
+const other = () => me==="her" ? "him" : "her";
+const whoLabel = by => by===me ? "you" : by;
+
+let visit = { ...VISIT_DEFAULT };
+$("from").textContent=ROUTE.from; $("to").textContent=ROUTE.to;
+function paintStub(){ const t=new Date(visit.date); if(isNaN(t)){ $("arrive-date").textContent="—"; $("arrive-time").textContent=""; return; }
+  const o={timeZone:"America/Chicago"}; $("arrive-date").textContent=t.toLocaleDateString(undefined,{...o,month:"short",day:"numeric"});
+  $("arrive-time").textContent=t.toLocaleDateString(undefined,{...o,weekday:"short"})+" · "+t.toLocaleTimeString(undefined,{...o,hour:"numeric",minute:"2-digit"})+" CT"; }
+function tickCountdown(){ const box=$("countdown"),ms=new Date(visit.date)-new Date(); box.replaceChildren();
+  if(isNaN(ms)){ const p=document.createElement("p"); p.className="ticket-label"; p.textContent="Set a date for our next visit"; box.append(p); return; }
+  if(ms<=0 && ms>-36*3600*1000){ const p=document.createElement("p"); p.className="arrived"; p.textContent="Today's the day. See you soon. ♥"; box.append(p); return; }
+  if(ms<=0){ const p=document.createElement("p"); p.className="arrived"; p.textContent="When's our next visit?";
+    const q=document.createElement("p"); q.className="ticket-label"; q.textContent="Tap “Change date” to start the next countdown ♥"; box.append(p,q); return; }
+  const s=Math.floor(ms/1000),d=Math.floor(s/86400),h=Math.floor(s%86400/3600),m=Math.floor(s%3600/60),sec=s%60;
+  box.innerHTML=`<div class="clock"><div class="unit"><b>${d}</b><span>days</span></div><div class="unit"><b>${pad(h)}</b><span>hours</span></div><div class="unit"><b>${pad(m)}</b><span>minutes</span></div><div class="unit"><b>${pad(sec)}</b><span>seconds</span></div></div>`;
+  const p=document.createElement("p"); p.className="ticket-label"; p.textContent=visit.label||""; box.append(p); }
+paintStub(); tickCountdown(); setInterval(tickCountdown,1000);
+function moment(h){ if(h<5)return"probably asleep"; if(h<9)return"slow morning"; if(h<12)return"mid-morning"; if(h<14)return"lunchtime"; if(h<18)return"afternoon"; if(h<21)return"evening"; return"night owl hours"; }
+function tickClocks(){ const now=new Date(); const order = me==="him" ? ["him","her"] : ["her","him"];
+  $("zones").innerHTML=order.map(k=>{ const c=CLOCKS[k]; let t="--:--",hr=12;
+    try{ t=now.toLocaleTimeString(undefined,{hour:"numeric",minute:"2-digit",timeZone:c.tz}); hr=+new Intl.DateTimeFormat("en-US",{hour:"numeric",hourCycle:"h23",timeZone:c.tz}).format(now);}catch(e){}
+    const label = !me ? c.city : (k===me ? "Me · "+c.city : (k==="him"?"Him":"Her")+" · "+c.city);
+    return `<div class="zone"><span class="who">${label}</span><span class="t">${t}</span><span class="what">${moment(hr)}</span></div>`; }).join(""); }
+tickClocks(); setInterval(tickClocks,15000);
+
+/* ---------- Envelopes ---------- */
+const defaultLetters=()=>DEFAULT_LETTERS.map((l,i)=>({id:"d"+i,order:i,body:"",sign:"",ps:"",unlock:"",...l}));
+let letters=defaultLetters(), lettersFromDb=false, letterEditor=null;
+let openedMine=new Set(JSON.parse(LS.get("ow-opened2")||"[]")), openedHis=new Set(), saveOpened=()=>LS.set("ow-opened2",JSON.stringify([...openedMine]));
+let replies=new Map(), HUB=null, curRecorder=null;
+const REACTS=["❤️","🥹","😭","😂","🥰","🔥"];
+const reactOf=r=>r&&REACTS.includes(r.reaction)?r.reaction:"♥";
+const isWriter=()=>!!letterEditor;
+const hasBody=l=>!!(l.body&&l.body.trim());
+function status(l){
+  if(!hasBody(l)) return {locked:true,why:"still being written",tag:"Coming soon"};
+  if(l.unlock){ const u=new Date(l.unlock+"T00:00"); if(!isNaN(u)&&new Date()<u){ const nice=u.toLocaleDateString(undefined,{month:"short",day:"numeric"}); return {locked:true,why:`sealed until ${nice}`,tag:`Opens ${nice}`}; } }
+  return {locked:false};
+}
+const openable=()=>letters.filter(l=>!status(l).locked).map(l=>l.id);
+const stamps=["♥","✈","☾","☀","★","✉","✿","∞","⌂","♪","☁","☼"];
+function renderEnvelopes(){
+  const grid=$("grid"); grid.innerHTML=""; const writer=isWriter();
+  letters.forEach((l,i)=>{
+    const st=status(l), isOpen=openedMine.has(l.id)&&!st.locked&&!writer, heRead=me==="her"&&openedHis.has(l.id);
+    const b=document.createElement("button"); b.type="button";
+    b.className="env"+(isOpen?" opened":"")+(st.locked&&!writer?" locked":"");
+    let tag;
+    const rr=replies.get(l.id), rrOther=rr&&rr.by!==me, rrMine=rr&&rr.by===me;
+    if(writer) tag = !hasBody(l) ? '<span class="tag wait">Not written yet</span>' : rrOther ? `<span class="tag done">He replied ${reactOf(rr)}</span>` : heRead ? '<span class="tag done">He read it ♥</span>' : st.locked ? `<span class="tag wait">${st.tag}</span>` : '<span class="tag done">Ready ♥</span>';
+    else tag = st.locked ? `<span class="tag wait">${st.tag}</span>` : isOpen ? (rrMine?'<span class="tag done">Replied ♥</span>':'<span class="tag done">Opened</span>') : '';
+    b.setAttribute("aria-label",(writer?"Write or edit: open when ":"Open when ")+l.when+(!writer&&st.locked?` (${st.why})`:isOpen?" (opened)":""));
+    if(st.locked&&!writer) b.setAttribute("aria-disabled","true");
+    b.innerHTML=`<div class="env-body"><div class="env-inner"><span class="to">Open when</span><span class="label"></span></div></div><div class="flap"></div><div class="seal" aria-hidden="true">♥</div><div class="stamp" aria-hidden="true"><span><span class="sg">${stamps[i%stamps.length]}</span><span class="sa"><br>AIR<br>MAIL</span></span></div>${tag}`;
+    b.querySelector(".label").textContent=l.when;
+    b.addEventListener("click",e=>{
+      if(writer){ lastFocus=b; letterEditor.open(l.id); return; }
+      if(st.locked){ b.classList.remove("shake"); void b.offsetWidth; b.classList.add("shake"); toast(st.why==="still being written"?"This one is still being written. Check back soon ♥":`Not yet! This one is ${st.why}.`); return; }
+      lastFocus=b; openLetter(l.id,e.clientX,e.clientY);
+    });
+    grid.appendChild(b);
+  });
+  if(writer){ const n=document.createElement("button"); n.type="button"; n.className="new-env"; n.textContent="+ New envelope"; n.onclick=()=>{ lastFocus=n; letterEditor.open(null); }; grid.appendChild(n); }
+  if(writer){ const written=letters.filter(hasBody).length, read=letters.filter(l=>openedHis.has(l.id)).length;
+    $("count").textContent=`${written} written · ${letters.length-written} still to write`+(read?` · he's read ${read}`:"");
+  } else { const ready=openable(), sealed=ready.filter(id=>!openedMine.has(id)).length, coming=letters.length-ready.length;
+    $("count").textContent=`${sealed} ready to open`+(coming?` · ${coming} on the way`:""); }
+}
+const overlay=$("overlay"); let current=null,lastFocus=null, onOpened=null;
+function showLetter(l,withNav){
+  $("l-title").textContent=l.when; $("l-body").textContent=(l.body||"").trim(); $("l-sign").textContent=(l.sign||"").trim()||SIGN;
+  $("l-ps").hidden=!l.ps; $("l-ps").textContent=l.ps?"P.S. "+l.ps:"";
+  curRecorder?.stop(); curRecorder=null; $("l-extra").replaceChildren();
+  const s=overlay.querySelector(".sheet"); s.style.animation="none"; void s.offsetHeight; s.style.animation="";
+  overlay.hidden=false; overlay.scrollTop=0; $("close").focus();
+  $("prev").hidden=$("next").hidden=!withNav||openable().length<2;
+}
+function openLetter(id,x,y){
+  const l=letters.find(x=>x.id===id); if(!l) return; current=id; showLetter(l,true);
+  if(me==="him"&&HUB) $("l-extra").append(replyPanel(id));
+  const fresh=!openedMine.has(id); if(fresh&&x!=null) hearts(x,y);
+  openedMine.add(id); saveOpened(); renderEnvelopes(); if(fresh&&onOpened) onOpened();
+}
+function step(dir){ const list=openable(); if(!list.length)return; const pos=list.indexOf(current); openLetter(list[(pos+dir+list.length)%list.length]); }
+function closeLetter(){ curRecorder?.stop(); overlay.hidden=true; if($("editor").hidden) lastFocus?.focus?.(); }
+$("close").onclick=closeLetter; overlay.addEventListener("click",e=>{ if(e.target===overlay) closeLetter(); });
+document.addEventListener("keydown",e=>{ if(!overlay.hidden&&e.key==="Escape") closeLetter(); });
+$("prev").onclick=()=>step(-1); $("next").onclick=()=>step(1);
+renderEnvelopes();
+
+/* ---------- Voice notes ---------- */
+function voiceRecorder(box,maxSec=60){
+  let data=null, rec=null, stream=null, chunks=[], timer=null, t0=0;
+  box.className="voice-box";
+  const mk=(tag,cls,txt)=>{ const e=document.createElement(tag); if(cls) e.className=cls; if(txt!=null) e.textContent=txt; return e; };
+  function render(){
+    box.replaceChildren();
+    if(rec){ const b=mk("button","btn solid","■ Stop"); b.type="button"; b.onclick=stop; box.append(b,mk("span","rec-time","0:00")); }
+    else if(data){ const a=mk("audio"); a.controls=true; a.src=data; a.preload="metadata";
+      const r=mk("button","link","re-record"); r.type="button"; r.onclick=start;
+      const x=mk("button","link","remove"); x.type="button"; x.onclick=()=>{ data=null; render(); };
+      box.append(a,r,x); }
+    else { const b=mk("button","btn","🎙 Record a voice note"); b.type="button"; b.onclick=start; box.append(b,mk("span","vb-hint","up to 1 minute")); }
+  }
+  async function start(){
+    if(!navigator.mediaDevices||!navigator.mediaDevices.getUserMedia||!window.MediaRecorder){ toast("Voice notes don't work in this browser. Try Safari or Chrome."); return; }
+    try{ stream=await navigator.mediaDevices.getUserMedia({audio:true}); }
+    catch(e){ toast("Allow the microphone so you can record a voice note."); return; }
+    const types=["audio/mp4","audio/webm;codecs=opus","audio/webm","audio/ogg;codecs=opus"];
+    const mt=types.find(t=>MediaRecorder.isTypeSupported&&MediaRecorder.isTypeSupported(t));
+    try{ rec=new MediaRecorder(stream,mt?{mimeType:mt,audioBitsPerSecond:32000}:{audioBitsPerSecond:32000}); }catch(e){ rec=new MediaRecorder(stream); }
+    chunks=[]; const r=rec;
+    r.ondataavailable=e=>{ if(e.data&&e.data.size) chunks.push(e.data); };
+    r.onstop=()=>{ stream.getTracks().forEach(t=>t.stop()); clearInterval(timer);
+      const blob=new Blob(chunks,{type:r.mimeType||mt||"audio/webm"}); rec=null;
+      const fr=new FileReader();
+      fr.onload=()=>{ if(String(fr.result).length>900000){ data=null; toast("That one came out too big. Try a shorter voice note."); } else data=fr.result; render(); };
+      fr.readAsDataURL(blob); };
+    r.start(1000); t0=Date.now(); render();
+    timer=setInterval(()=>{ const s=Math.floor((Date.now()-t0)/1000), el=box.querySelector(".rec-time");
+      if(el) el.textContent=`${Math.floor(s/60)}:${pad(s%60)} / 1:00`; if(s>=maxSec) stop(); },250);
+  }
+  function stop(){ if(rec&&rec.state!=="inactive") rec.stop(); }
+  render();
+  return { get:()=>data, set:d=>{ data=d||null; render(); }, stop };
+}
+function voiceView(src,label){
+  const w=document.createElement("div"); w.className="his-voice";
+  const p=document.createElement("p"); p.textContent=label;
+  const a=document.createElement("audio"); a.controls=true; a.src=src; a.preload="metadata";
+  w.append(p,a); return w;
+}
+function replyView(r){
+  const w=document.createElement("div"); w.className="reply-view";
+  const top=document.createElement("div"); top.className="rv-top";
+  if(REACTS.includes(r.reaction)){ const e=document.createElement("span"); e.className="rv-emoji"; e.textContent=r.reaction; top.append(e); }
+  const t=document.createElement("span"); t.textContent=`${r.by==="him"?"He":"She"} replied · ${ago(r.at)}`; top.append(t); w.append(top);
+  if(r.text){ const p=document.createElement("p"); p.className="rv-text"; p.textContent="“"+r.text+"”"; w.append(p); }
+  if(r.voice&&/^data:audio\//.test(r.voice)){ const a=document.createElement("audio"); a.controls=true; a.src=r.voice; a.preload="metadata"; w.append(a); }
+  return w;
+}
+function replyPanel(letterId){
+  const w=document.createElement("div"); w.className="reply";
+  const ex=replies.get(letterId), mine=ex&&ex.by===me?ex:null;
+  const h=document.createElement("h3"); h.textContent=mine?"Your reply · change it anytime":"Send her a little something back";
+  const row=document.createElement("div"); row.className="reacts"; let pick=mine&&REACTS.includes(mine.reaction)?mine.reaction:null;
+  REACTS.forEach(e=>{ const b=document.createElement("button"); b.type="button"; b.textContent=e; b.setAttribute("aria-label","React with "+e); b.setAttribute("aria-pressed",String(e===pick));
+    b.onclick=()=>{ pick=pick===e?null:e; row.querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed",String(x.textContent===pick))); }; row.append(b); });
+  const vb=document.createElement("div"); const rec=voiceRecorder(vb); if(mine&&mine.voice) rec.set(mine.voice); curRecorder=rec;
+  const t=document.createElement("input"); t.type="text"; t.id="reply-text"; t.maxLength=140; t.placeholder="Say something short (optional)"; t.setAttribute("aria-label","Short reply"); t.value=mine&&mine.text||"";
+  const send=document.createElement("button"); send.type="button"; send.className="btn solid"; send.textContent=mine?"Update reply":"Send ♥";
+  send.onclick=async e=>{ if(!HUB) return; const voice=rec.get(), text=t.value.trim();
+    if(!pick&&!voice&&!text){ toast("Pick a reaction, record something, or type a few words."); return; }
+    send.disabled=true; send.textContent="Sending…";
+    const ok=await HUB.safe(HUB.F.setDoc(HUB.D("replies",letterId),{reaction:pick||"",text,voice:voice||"",by:me,at:Date.now()}));
+    send.disabled=false; send.textContent="Update reply";
+    if(ok){ hearts(e.clientX,e.clientY,10); toast(me==="him"?"Sent to her ♥":"Sent to him ♥"); if(!mine) HUB.notify("reply"); h.textContent="Your reply · change it anytime"; } };
+  w.append(h,row,vb,t,send); return w;
+}
+
+/* ---------- Date night ---------- */
+const DECKS={
+  sweet:{name:"Sweet",bg:"#ffe3ea",cards:[
+    "What's a small thing I do that makes you feel loved?",
+    "When did you first realize you liked me?",
+    "What's your favorite photo of us, and why?",
+    "What's something about me you'd never change?",
+    "What song makes you think of me?",
+    "What's your favorite way to spend a lazy day with me?",
+    "What was going through your head on our first date?",
+    "What's a moment with me you replay in your head?",
+    "What's one thing I do that always makes you smile?",
+    "If you could relive one day with me, which would it be?",
+    "What's a nickname you secretly love?",
+    "What do you miss most about me right now?",
+    "When do you feel closest to me, even from far away?",
+    "What's the best surprise you've ever gotten?",
+    "What's something you've never told me you love about us?"]},
+  deep:{name:"Deep",bg:"#e3ebff",cards:[
+    "What's something you're working on about yourself right now?",
+    "What makes you feel most understood?",
+    "What's a fear you don't talk about much?",
+    "What do you think makes a relationship last?",
+    "When do you feel most like yourself?",
+    "What's something you've changed your mind about recently?",
+    "What's a lesson you learned the hard way?",
+    "What does a really good day look like for you?",
+    "How do you like to be comforted when you're upset?",
+    "What's something you're proud of that you don't say out loud?",
+    "What's a memory that shaped who you are?",
+    "What's one thing you wish people understood about you?",
+    "What do you need more of in your life right now?",
+    "What's the hardest part of being long distance for you?",
+    "How can I support you better from far away?"]},
+  funny:{name:"Funny",bg:"#fff1b8",cards:[
+    "What's the most embarrassing thing you've done in front of me?",
+    "If we were a reality show, what would it be called?",
+    "What's the weirdest food combo you secretly love?",
+    "Which of my habits would you rate 10/10 annoying?",
+    "What would your pro wrestler name be?",
+    "If you were a kitchen appliance, which one and why?",
+    "What's the dumbest thing you've ever argued about?",
+    "What celebrity would play me in a movie about us?",
+    "What's your most useless talent?",
+    "Describe me using only three emojis.",
+    "What's the worst fashion phase you've had?",
+    "If our pet could talk, what would it complain about?",
+    "What's a hill you would die on that doesn't matter at all?",
+    "What's the funniest thing that's happened on one of our calls?",
+    "Do your best impression of me. Go."]},
+  wyr:{name:"Would you rather",bg:"#e4f6ea",cards:[
+    "Would you rather have a beach vacation or a cabin in the mountains?",
+    "Would you rather only text or only call for a week?",
+    "Would you rather be able to teleport or read minds?",
+    "Would you rather have breakfast for dinner or dinner for breakfast forever?",
+    "Would you rather relive our first date or skip ahead to our next one?",
+    "Would you rather go to a concert or a sports game together?",
+    "Would you rather have a dog or a cat together?",
+    "Would you rather never be cold or never be hot again?",
+    "Would you rather cook together or order takeout together?",
+    "Would you rather win the lottery or have one extra hour every day?",
+    "Would you rather explore a big city or a tiny beach town?",
+    "Would you rather sing karaoke or dance in public?",
+    "Would you rather have a movie marathon or a game night?",
+    "Would you rather travel back in time or into the future?",
+    "Would you rather get a surprise visit or a surprise gift?"]},
+  future:{name:"Future us",bg:"#efe3ff",cards:[
+    "Where do you see us in five years?",
+    "What's the first trip you want to take together?",
+    "What would our dream home look like?",
+    "What's a tradition you want us to start?",
+    "What's something you want us to learn together?",
+    "What city could you see us living in?",
+    "What's the first thing you want to do when we're not long distance?",
+    "What does a perfect weekend look like when we live together?",
+    "What's one thing on your bucket list you want me there for?",
+    "What kind of pet would we get first?",
+    "How do you want to celebrate our next anniversary?",
+    "What's a goal you want us to work toward together?"]},
+};
+const TOT=[["Beach","Mountains"],["Morning","Night"],["Pizza","Tacos"],["Coffee","Tea"],["Summer","Winter"],["Dogs","Cats"],["Movies","TV shows"],["Sweet","Salty"],["Texting","Calling"],["Sunrise","Sunset"],
+  ["City","Countryside"],["Pancakes","Waffles"],["Hoodie","Jacket"],["Road trip","Flight"],["Stay in","Go out"],["Netflix","YouTube"],["Big party","Small group"],["Cook","Order in"],["Rain","Snow"],["Books","Podcasts"],
+  ["Early bird","Night owl"],["Chocolate","Vanilla"],["Hot tub","Pool"],["Board games","Video games"],["Fries","Onion rings"],["Spontaneous","Planned"],["Burger","Hot dog"],["Camping","Hotel"],["Spring","Fall"],["Comedy","Horror"]];
+const DRAW_PROMPTS=["a cat wearing a hat","our first date","a volleyball","a shooting star","your dream house","me when I wake up","a pizza with a face","a dinosaur in love","the moon eating a cookie","a snowman at the beach","a dog driving a car","your favorite food","a cloud that's sad","a heart with legs","a shot put flying","a sunflower","a road trip","a penguin in sunglasses","a rocket ship","a cup of coffee","my laugh","a tiny house","a whale","a cake on fire","a superhero version of me"];
+function seededOrder(n,seed){ let a=[...Array(n).keys()], s=(seed>>>0)||1;
+  const r=()=>{ s=(s+0x6D2B79F5)|0; let t=Math.imul(s^s>>>15,1|s); t=t+Math.imul(t^t>>>7,61|t)^t; return ((t^t>>>14)>>>0)/4294967296; };
+  for(let i=n-1;i>0;i--){ const j=Math.floor(r()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; }
+const el=(tag,cls,txt)=>{ const e=document.createElement(tag); if(cls) e.className=cls; if(txt!=null) e.textContent=txt; return e; };
+
+function setupDateNight({F,D,C,db,safe,live}){
+  const They=other()==="him"?"He":"She", they=other()==="him"?"he":"she", them=other()==="him"?"him":"her";
+  const handlers={};
+  live(C("date"),docs=>{ const m=new Map(docs.map(d=>[d.id,d])); Object.values(handlers).forEach(h=>h(m)); });
+
+  /* ---- Conversation cards ---- */
+  { const box=$("date-cards"); box.replaceChildren();
+    let st={deck:"sweet",i:0,seed:1,by:"",at:0}, shownKey="";
+    const chips=el("div","deck-chips");
+    Object.entries(DECKS).forEach(([k,d])=>{ const b=el("button",null,d.name); b.type="button"; b.dataset.k=k;
+      b.onclick=()=>write({deck:k,i:0,seed:Math.floor(Math.random()*1e9)}); chips.append(b); });
+    const card=el("div","qcard"), qd=el("span","q-deck"), qt=el("p","q-text"), qn=el("span","q-num"); card.append(qd,qt,qn);
+    card.setAttribute("aria-live","polite");
+    const nav=el("div","card-nav"), back=el("button","btn","← Back"), next=el("button","btn solid","Next card →");
+    back.type=next.type="button"; nav.append(back,next);
+    const meta=el("p","card-meta");
+    box.append(chips,card,nav,meta);
+    function render(){
+      const d=DECKS[st.deck]||DECKS.sweet, n=d.cards.length, order=seededOrder(n,st.seed), idx=((st.i%n)+n)%n;
+      chips.querySelectorAll("button").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.k===st.deck)));
+      const key=st.deck+":"+st.seed+":"+st.i;
+      if(shownKey&&key!==shownKey){ card.classList.remove("flip"); void card.offsetWidth; card.classList.add("flip"); }
+      shownKey=key;
+      card.style.setProperty("--qbg",d.bg); qd.textContent=d.name; qt.textContent=d.cards[order[idx]]; qn.textContent=`${idx+1} / ${n}`;
+      back.disabled=st.i<=0;
+      meta.textContent=st.at&&st.by&&st.by!==me?`${They} flipped this one · ${ago(st.at)}`:"Flip together on a call. The card changes on both phones.";
+    }
+    function write(patch){ st={...st,...patch,by:me,at:Date.now()}; render(); safe(F.setDoc(D("date","cards"),st)); }
+    next.onclick=()=>write({i:st.i+1}); back.onclick=()=>{ if(st.i>0) write({i:st.i-1}); };
+    handlers.cards=m=>{ const d=m.get("cards"); if(d&&DECKS[d.deck]){ st={deck:d.deck,i:d.i|0,seed:d.seed|0,by:d.by,at:d.at}; } render(); };
+    render(); }
+
+  /* ---- This or That ---- */
+  { const box=$("date-tot"); let round=0, mine={}, theirs={};
+    const qs=()=>seededOrder(TOT.length,round*7919+13).slice(0,10);
+    function picks(doc){ return doc&&doc.round===round&&doc.picks?doc.picks:{}; }
+    const count=p=>qs().filter((_,k)=>p[k]===0||p[k]===1).length;
+    function render(){
+      box.replaceChildren(); const list=qs(), myN=count(mine), thN=count(theirs);
+      if(myN<10){
+        const k=list.findIndex((_,j)=>!(mine[j]===0||mine[j]===1)), pair=TOT[list[k]];
+        const prog=el("p","tot-progress",`Question ${k+1} of 10 · answer on your own, reveal together`);
+        const row=el("div","tot-choices");
+        const a=el("button",null,pair[0]), or=el("span","tot-or","or"), b=el("button",null,pair[1]); a.type=b.type="button";
+        const pick=v=>{ mine={...mine,[k]:v}; render(); safe(F.setDoc(D("date","tot_"+me),{round,picks:mine,at:Date.now()})); };
+        a.onclick=()=>pick(0); b.onclick=()=>pick(1); row.append(a,or,b);
+        box.append(prog,row);
+        if(myN>0){ const u=el("button","link","undo last"); u.type="button";
+          u.onclick=()=>{ const last=Math.max(...Object.keys(mine).map(Number)); const c={...mine}; delete c[last]; mine=c; render(); safe(F.setDoc(D("date","tot_"+me),{round,picks:mine,at:Date.now()})); };
+          box.append(u); }
+      } else if(thN<10){
+        box.append(el("p","tot-score","All done ♥"), el("p","tot-wait",`Waiting for ${them} to finish (${thN} of 10). Your answers stay hidden until you both finish.`));
+      } else {
+        const matches=list.filter((_,k)=>mine[k]===theirs[k]).length;
+        box.append(el("p","tot-score",`You matched ${matches} of 10 ${matches>=8?"🥰":matches>=5?"♥":"😂"}`));
+        const ul=el("ul","tot-list");
+        list.forEach((qi,k)=>{ const li=el("li",mine[k]===theirs[k]?"match":"");
+          const y=el("span",null,TOT[qi][mine[k]]); y.prepend(el("span","who","you"));
+          const t=el("span",null,TOT[qi][theirs[k]]); t.prepend(el("span","who",them));
+          li.append(y,t,el("span","tick",mine[k]===theirs[k]?"✓":"")); ul.append(li); });
+        const again=el("button","btn solid","New round"); again.type="button";
+        again.onclick=()=>safe(F.setDoc(D("date","tot"),{round:round+1,at:Date.now()}));
+        box.append(ul,again);
+      }
+    }
+    handlers.tot=m=>{ const r=m.get("tot"); round=r&&r.round|0||0; mine=picks(m.get("tot_"+me)); theirs=picks(m.get("tot_"+other())); render(); };
+    render(); }
+
+  /* ---- Movie night sync ---- */
+  { const box=$("date-movie"); let mv={}, shownGo=0, ov=null, tick=null;
+    const FRESH=15*60000, fresh=t=>t&&Date.now()-t<FRESH;
+    function countdown(go){
+      if(shownGo===go) return; shownGo=go; if(ov) ov.remove(); clearInterval(tick);
+      ov=el("div","count-overlay"); ov.setAttribute("role","status"); const big=el("b"), sub=el("p",null,"Get ready to press play"); ov.append(big,sub); document.body.append(ov);
+      let last="";
+      tick=setInterval(()=>{ const left=go-Date.now(); let v;
+        if(left>0){ v=String(Math.ceil(left/1000)); sub.textContent="Get ready to press play"; }
+        else if(left>-2500){ v="▶"; sub.textContent="Press play now!"; }
+        else { clearInterval(tick); ov.remove(); ov=null; render(); return; }
+        if(v!==last){ last=v; big.textContent=v; big.style.animation="none"; void big.offsetWidth; big.style.animation=""; } },80);
+    }
+    function render(){
+      box.replaceChildren();
+      const meR=fresh(mv[me]), thR=fresh(mv[other()]);
+      const dots=el("div","ready-dots");
+      [[me,"You"],[other(),They]].forEach(([w,label])=>{ const d=el("span","ready-dot"+(fresh(mv[w])?" on":"")); d.append(el("i"),document.createTextNode(label+(fresh(mv[w])?" · ready":" · not yet"))); dots.append(d); });
+      const status=el("p","movie-status"), btn=el("button","btn solid big-btn"); btn.type="button";
+      if(meR&&thR){ const go=Math.max(mv.her,mv.him)+5000;
+        if(Date.now()<go+2500){ status.textContent="Here we go…"; countdown(go); btn.hidden=true; }
+        else { status.textContent="Enjoy the movie ♥"; btn.textContent="Start a new countdown"; btn.onclick=()=>safe(F.setDoc(D("date","movie"),{her:0,him:0})); } }
+      else if(meR){ status.textContent=`You're ready. Waiting for ${them}…`; btn.className="btn"; btn.textContent="Cancel"; btn.onclick=()=>safe(F.setDoc(D("date","movie"),{[me]:0},{merge:true})); }
+      else { status.textContent=thR?`${They}'s ready! Tap when you are.`:"Pull up the same movie, pause it at the start, then both tap ready. A countdown plays on both phones."; btn.textContent="I'm ready ▶"; btn.onclick=async()=>{ if(await safe(F.setDoc(D("date","movie"),{[me]:Date.now()},{merge:true}))&&!thR) HUB.notify("movie"); }; }
+      box.append(dots,status,btn);
+    }
+    handlers.movie=m=>{ mv=m.get("movie")||{}; render(); };
+    setInterval(()=>{ if(!ov) render(); },30000);
+    render(); }
+
+  /* ---- Doodle together ---- */
+  { const box=$("date-doodle"); box.replaceChildren();
+    const wrap=el("div","doodle-wrap"), cv=el("canvas"); cv.id="doodle"; cv.width=1600; cv.height=1200; cv.setAttribute("aria-label","Shared drawing board"); wrap.append(cv);
+    const ctx=cv.getContext("2d"); ctx.setTransform(1.6,0,0,1.6,0,0);
+    const COLORS=["#2a2622","#e0435c","#ff8fb8","#f4b93a","#3a8f6a","#4f7fd6","#8a6ad6"];
+    let color=me==="him"?"#4f7fd6":"#e0435c", width=6, strokes=[], cur=null, curId=null, writing=false, dirty=false, flushT=null;
+    const tools=el("div","doodle-tools"), sw=el("div","swatches");
+    COLORS.forEach(c=>{ const b=el("button","swatch"); b.type="button"; b.style.background=c; b.setAttribute("aria-label","Color "+c); b.setAttribute("aria-pressed",String(c===color));
+      b.onclick=()=>{ color=c; sw.querySelectorAll(".swatch").forEach(x=>x.setAttribute("aria-pressed",String(x===b))); }; sw.append(b); });
+    const size=el("button","btn",""); size.type="button"; const setSize=()=>{ size.textContent=width<8?"Thin ✎":"Thick ✎"; }; setSize();
+    size.onclick=()=>{ width=width<8?14:6; setSize(); };
+    const undo=el("button","btn","Undo mine"); undo.type="button";
+    const clear=el("button","link","Clear board"); clear.type="button"; let armed=false;
+    const promptBtn=el("button","btn","Give me something to draw"); promptBtn.type="button";
+    const prompt=el("span","doodle-prompt");
+    promptBtn.onclick=()=>{ prompt.textContent="Draw: "+DRAW_PROMPTS[Math.floor(Math.random()*DRAW_PROMPTS.length)]+" (shh, it's a secret)"; };
+    const expand=el("button","btn","⤢ Expand"); expand.type="button";
+    const panel=$("doodle-panel");
+    const tallPhone=()=>innerWidth<700&&innerHeight>innerWidth;
+    const fitRot=()=>panel.classList.toggle("rot",panel.classList.contains("expanded")&&tallPhone());
+    addEventListener("resize",fitRot);
+    const setExpanded=on=>{ panel.classList.toggle("expanded",on); fitRot(); document.body.classList.toggle("no-scroll",on);
+      expand.textContent=on?"✕ Close":"⤢ Expand"; expand.setAttribute("aria-expanded",String(on)); requestAnimationFrame(redraw); };
+    expand.onclick=()=>setExpanded(!panel.classList.contains("expanded"));
+    document.addEventListener("keydown",e=>{ if(e.key==="Escape"&&panel.classList.contains("expanded")) setExpanded(false); });
+    tools.append(expand,sw,size,undo,promptBtn,clear);
+    box.append(wrap,tools,prompt);
+
+    function drawStroke(s){ const p=s.pts; if(!p||p.length<2) return;
+      ctx.strokeStyle=s.color||"#2a2622"; ctx.lineWidth=s.w||6; ctx.lineCap="round"; ctx.lineJoin="round"; ctx.beginPath(); ctx.moveTo(p[0],p[1]);
+      if(p.length<=4){ ctx.lineTo((p[2]??p[0])+.01,p[3]??p[1]); }
+      else { for(let i=2;i<p.length-2;i+=2){ ctx.quadraticCurveTo(p[i],p[i+1],(p[i]+p[i+2])/2,(p[i+1]+p[i+3])/2); } ctx.lineTo(p[p.length-2],p[p.length-1]); }
+      ctx.stroke(); }
+    function redraw(){ ctx.clearRect(0,0,1000,750); strokes.forEach(s=>{ if(s.id!==curId) drawStroke(s); }); if(cur) drawStroke(cur); }
+    const pos=e=>{ const r=cv.getBoundingClientRect();
+      if(panelEl.classList.contains("rot")) return [Math.round((e.clientY-r.top)/r.height*1000),Math.round((r.right-e.clientX)/r.width*750)];
+      return [Math.round((e.clientX-r.left)/r.width*1000),Math.round((e.clientY-r.top)/r.height*750)]; };
+    const panelEl=$("doodle-panel");
+    async function flush(){ if(!cur||!curId) return; if(writing){ dirty=true; return; } writing=true; dirty=false;
+      await safe(F.setDoc(D("doodle",curId),{pts:cur.pts,color:cur.color,w:cur.w,by:me,at:cur.at}));
+      writing=false; if(dirty) flush(); }
+    cv.addEventListener("pointerdown",e=>{ e.preventDefault(); cv.setPointerCapture(e.pointerId);
+      curId="s"+Date.now().toString(36)+Math.random().toString(36).slice(2,6); cur={pts:pos(e),color,w:width,at:Date.now()}; redraw();
+      flushT=setInterval(()=>{ if(cur) flush(); },350); });
+    cv.addEventListener("pointermove",e=>{ if(!cur) return; if(cur.pts.length>2400) return; const [x,y]=pos(e), n=cur.pts.length;
+      if(Math.abs(x-cur.pts[n-2])+Math.abs(y-cur.pts[n-1])<3) return; cur.pts.push(x,y); redraw(); });
+    const end=()=>{ if(!cur) return; clearInterval(flushT); const done=cur, id=curId; flush().then(()=>{ if(curId===id){ cur=null; curId=null; } });
+      strokes=strokes.filter(s=>s.id!==id).concat([{...done,id,by:me}]); };
+    cv.addEventListener("pointerup",end); cv.addEventListener("pointercancel",end); cv.addEventListener("lostpointercapture",end);
+    undo.onclick=()=>{ const mineS=strokes.filter(s=>s.by===me); const last=mineS[mineS.length-1]; if(!last) { toast("Nothing of yours to undo."); return; }
+      strokes=strokes.filter(s=>s.id!==last.id); redraw(); safe(F.deleteDoc(D("doodle",last.id))); };
+    clear.onclick=async()=>{ if(!armed){ armed=true; clear.textContent="Tap again to clear for both of you"; setTimeout(()=>{ armed=false; clear.textContent="Clear board"; },4000); return; }
+      armed=false; clear.textContent="Clear board"; const b=F.writeBatch(db); strokes.forEach(s=>b.delete(D("doodle",s.id))); strokes=[]; redraw(); await safe(b.commit()); };
+    live(F.query(C("doodle"),F.orderBy("at"),F.limit(500)),docs=>{ strokes=docs; redraw(); });
+    redraw(); }
+}
+
+/* ---------- Push notifications ---------- */
+const pushSupported=()=>"serviceWorker" in navigator&&"PushManager" in window&&"Notification" in window;
+const isIOS=/iPad|iPhone|iPod/.test(navigator.userAgent)||(navigator.platform==="MacIntel"&&navigator.maxTouchPoints>1);
+const isStandalone=()=>matchMedia("(display-mode: standalone)").matches||navigator.standalone===true;
+let swReg=null;
+if("serviceWorker" in navigator&&/^https?:$/.test(location.protocol)) navigator.serviceWorker.register("sw.js").then(r=>{ swReg=r; }).catch(e=>console.warn("sw",e));
+function b64ToU8(str){ const pad="=".repeat((4-str.length%4)%4); const raw=atob((str+pad).replace(/-/g,"+").replace(/_/g,"/")); return Uint8Array.from(raw,c=>c.charCodeAt(0)); }
+const DEVICE_ID=LS.get("ow-device")||(()=>{ const id="d"+Math.random().toString(36).slice(2,10); LS.set("ow-device",id); return id; })();
+function notifTypes(){ const o=other()==="him"?"Jay":(NAMES.her||"she");
+  return [["tap",`When ${o} taps “thinking of you”`],...(me==="him"?[["letter","When a new letter is ready to open"]]:[["reply","When he replies to one of your letters"]]),
+    ["pocket","Pocket notes"],["wall","Fridge notes and photos"],["song","Songs"],["memory","New memories on our story"],["movie","Movie night “ready”"]]; }
+
+/* ---------- Tab bar: highlight the section you're in ---------- */
+(function(){
+  const tabs=[...document.querySelectorAll("#tabbar a")]; if(!tabs.length||!("IntersectionObserver" in window)) return;
+  const seen=new Map();
+  const io=new IntersectionObserver(es=>{ es.forEach(e=>seen.set(e.target.id,e.isIntersecting?e.intersectionRatio:0));
+    let best=null,score=0; seen.forEach((v,k)=>{ if(v>score){score=v;best=k;} });
+    if(best) tabs.forEach(t=>t.classList.toggle("on",t.dataset.sec===best)); },{threshold:[0,.15,.3,.5,.75,1],rootMargin:"-10% 0px -35% 0px"});
+  tabs.forEach(t=>{ const el=document.getElementById(t.dataset.sec); if(el) io.observe(el); });
+  tabs[0].classList.add("on");
+})();
+
+/* ---------- Lightbox ---------- */
+const lb=$("lightbox");
+function openLb(src,cap){ $("lb-img").src=src; $("lb-img").alt=cap||"Photo"; $("lb-cap").textContent=cap||""; lb.hidden=false; }
+lb.onclick=()=>lb.hidden=true; document.addEventListener("keydown",e=>{ if(!lb.hidden&&e.key==="Escape") lb.hidden=true; });
+
+/* ---------- Shared hub ---------- */
+function sharedOff(msg){
+  document.querySelectorAll(".shared-form").forEach(f=>f.hidden=true);
+  $("corner-note").textContent=msg; $("tap-note").textContent=msg;
+  ["wall","songs","date-cards","date-tot","date-movie","date-doodle"].forEach(id=>$(id).replaceChildren(emptyBox(msg)));
+  $("timeline").replaceChildren(); $("plans").replaceChildren(); $("someday").replaceChildren();
+  $("pocket-btn").onclick=()=>{ $("pocket").textContent=msg; };
+}
+// SHA-256: uses the browser's built-in version, with a plain-JS fallback for browsers that hide it.
+function sha256js(str){
+  const K=[0x428a2f98,0x71374491,0xb5c0fbcf,0xe9b5dba5,0x3956c25b,0x59f111f1,0x923f82a4,0xab1c5ed5,0xd807aa98,0x12835b01,0x243185be,0x550c7dc3,0x72be5d74,0x80deb1fe,0x9bdc06a7,0xc19bf174,0xe49b69c1,0xefbe4786,0x0fc19dc6,0x240ca1cc,0x2de92c6f,0x4a7484aa,0x5cb0a9dc,0x76f988da,0x983e5152,0xa831c66d,0xb00327c8,0xbf597fc7,0xc6e00bf3,0xd5a79147,0x06ca6351,0x14292967,0x27b70a85,0x2e1b2138,0x4d2c6dfc,0x53380d13,0x650a7354,0x766a0abb,0x81c2c92e,0x92722c85,0xa2bfe8a1,0xa81a664b,0xc24b8b70,0xc76c51a3,0xd192e819,0xd6990624,0xf40e3585,0x106aa070,0x19a4c116,0x1e376c08,0x2748774c,0x34b0bcb5,0x391c0cb3,0x4ed8aa4a,0x5b9cca4f,0x682e6ff3,0x748f82ee,0x78a5636f,0x84c87814,0x8cc70208,0x90befffa,0xa4506ceb,0xbef9a3f7,0xc67178f2];
+  const bytes=[...new TextEncoder().encode(str)], bitLen=bytes.length*8;
+  bytes.push(0x80); while(bytes.length%64!==56) bytes.push(0);
+  for(let i=7;i>=0;i--) bytes.push(i>=4?0:(bitLen>>>(i*8))&255);
+  let h=[0x6a09e667,0xbb67ae85,0x3c6ef372,0xa54ff53a,0x510e527f,0x9b05688c,0x1f83d9ab,0x5be0cd19];
+  const r=(x,n)=>(x>>>n)|(x<<(32-n)), w=new Array(64);
+  for(let o=0;o<bytes.length;o+=64){
+    for(let i=0;i<16;i++) w[i]=(bytes[o+i*4]<<24)|(bytes[o+i*4+1]<<16)|(bytes[o+i*4+2]<<8)|bytes[o+i*4+3];
+    for(let i=16;i<64;i++){ const s0=r(w[i-15],7)^r(w[i-15],18)^(w[i-15]>>>3), s1=r(w[i-2],17)^r(w[i-2],19)^(w[i-2]>>>10); w[i]=(w[i-16]+s0+w[i-7]+s1)|0; }
+    let [a,b,c,d,e,f,g,hh]=h;
+    for(let i=0;i<64;i++){ const t1=(hh+(r(e,6)^r(e,11)^r(e,25))+((e&f)^(~e&g))+K[i]+w[i])|0, t2=((r(a,2)^r(a,13)^r(a,22))+((a&b)^(a&c)^(b&c)))|0;
+      hh=g; g=f; f=e; e=(d+t1)|0; d=c; c=b; b=a; a=(t1+t2)|0; }
+    h=[a,b,c,d,e,f,g,hh].map((v,i)=>(v+h[i])|0);
+  }
+  return h.map(v=>(v>>>0).toString(16).padStart(8,"0")).join("");
+}
+async function sha(s){
+  try{ if(window.crypto&&crypto.subtle){ const b=await crypto.subtle.digest("SHA-256",new TextEncoder().encode(s)); return [...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,"0")).join(""); } }catch(e){}
+  return sha256js(s);
+}
+
+const configured = FIREBASE_CONFIG && FIREBASE_CONFIG.apiKey;
+if (!configured){
+  sharedOff("The shared corner turns on once Firebase is connected.");
+} else {
+  let fb;
+  try{
+    const V="10.12.2", base=`https://www.gstatic.com/firebasejs/${V}/`;
+    const [app,auth,fs]=await Promise.all([import(base+"firebase-app.js"),import(base+"firebase-auth.js"),import(base+"firebase-firestore.js")]);
+    const a=app.initializeApp(FIREBASE_CONFIG); let fdb; try{ fdb=fs.initializeFirestore(a,{experimentalAutoDetectLongPolling:true}); }catch(e){ fdb=fs.getFirestore(a); }
+    fb={auth:auth.getAuth(a),A:auth,db:fdb,F:fs};
+    await fb.A.signInAnonymously(fb.auth);
+  }catch(e){ console.error(e); sharedOff("Couldn't reach our shared corner right now. Check your connection and refresh."); }
+  if (fb) startGate(fb);
+}
+
+function startGate(fb){
+  const {db,F}=fb; const gate=$("gate"); let pickedWho=me, hubId=LS.get("ow-hub");
+  starfield($("gate-stars"));
+  const hubDoc=id=>F.doc(db,"hubs",id,"meta","hub");
+  async function enter(id){ LS.set("ow-hub",id); LS.set("ow-who",pickedWho); me=pickedWho; gate.hidden=true; startHub(fb,id); }
+  // The writer side needs her PIN. Returns true once she's in.
+  async function proceed(id){
+    if(pickedWho!=="her"){ enter(id); return true; }
+    const pin=$("gate-pin").value.trim();
+    if(!/^\d{4,8}$/.test(pin)){ $("gate-err").textContent="Enter your writer PIN (4–8 numbers)."; $("gate-pin").focus(); return false; }
+    const ref=F.doc(db,"hubs",id,"meta","writer"), h=await sha(id+":writer:"+pin), s=await F.getDoc(ref);
+    if(s.exists()){ if(s.data().pin!==h){ $("gate-err").textContent="That writer PIN isn't right."; $("gate-pin").value=""; $("gate-pin").focus(); return false; } }
+    else { await F.setDoc(ref,{pin:h,at:Date.now()}); toast("Writer PIN saved. Only you can write letters now ♥"); }
+    enter(id); return true;
+  }
+  if (hubId && me){
+    if(me!=="her"){ enter(hubId); return; }
+    // A writer device from before PINs existed: make sure a PIN is set before continuing.
+    F.getDoc(F.doc(db,"hubs",hubId,"meta","writer")).then(s=>{
+      if(s.exists()){ enter(hubId); return; }
+      LS.del("ow-who"); me=null; gate.hidden=false; $("gate-err").textContent="New: set a writer PIN so only you can write letters.";
+    }).catch(()=>enter(hubId));
+  }
+  gate.hidden = !!(hubId && me);   // a returning writer stays hidden until the PIN check above decides
+  const syncPin=()=>{ $("gate-pin-wrap").hidden=pickedWho!=="her"; };
+  gate.querySelectorAll(".whos button").forEach(b=>{ b.setAttribute("aria-pressed",String(b.dataset.who===pickedWho));
+    b.onclick=()=>{ pickedWho=b.dataset.who; gate.querySelectorAll(".whos button").forEach(x=>x.setAttribute("aria-pressed",String(x===b))); syncPin(); }; });
+  syncPin();
+  $("gate-eye").onclick=()=>{ const inp=$("gate-word"), show=inp.type==="password";
+    inp.type=show?"text":"password"; $("gate-eye").setAttribute("aria-pressed",String(show));
+    $("gate-eye").setAttribute("aria-label",show?"Hide secret word":"Show secret word"); inp.focus(); };
+  let pending=null;
+  $("gate-form").onsubmit=async e=>{
+    e.preventDefault(); $("gate-err").textContent="";
+    if(!pickedWho){ $("gate-err").textContent="Tap who you are first."; return; }
+    const w=$("gate-word").value.trim().toLowerCase(); if(w.length<4){ $("gate-err").textContent="The secret word needs at least 4 letters."; return; }
+    $("gate-go").disabled=true;
+    try{ const id=await sha("openwhen:"+w); let snap; try{ snap=await F.getDoc(hubDoc(id)); }catch(e1){ await new Promise(r=>setTimeout(r,1500)); snap=await F.getDoc(hubDoc(id)); }
+      if(snap.exists()) await proceed(id); else { pending=id; $("gate-new").hidden=false; $("gate-go").hidden=true; }
+    }catch(err){ console.error(err);
+      const inApp=/Instagram|FBAN|FBAV|Snapchat|TikTok|musical_ly|Line\/|LinkedInApp|Pinterest/i.test(navigator.userAgent);
+      $("gate-err").textContent = inApp
+        ? "This app's built-in browser is blocking the connection. Tap ••• and choose Open in Safari or Open in Chrome."
+        : "Couldn't connect just now ("+(err&&err.code||"network")+"). Turn off any VPN or ad blocker, or try Safari or Chrome, then try again."; }
+    $("gate-go").disabled=false;
+  };
+  $("gate-create").onclick=async()=>{
+    $("gate-err").textContent="";
+    if($("gate-word").value.trim().length<6){ $("gate-err").textContent="Make the new word at least 6 letters, something only you two would know."; return; }
+    try{ await F.setDoc(hubDoc(pending),{created:Date.now()}); if(!(await proceed(pending))){ $("gate-new").hidden=true; $("gate-go").hidden=false; } }
+    catch(err){ console.error(err); $("gate-err").textContent="Couldn't set that up. Check the Firebase setup steps."; } };
+  $("gate-retry").onclick=()=>{ $("gate-new").hidden=true; $("gate-go").hidden=false; $("gate-word").value=""; $("gate-word").focus(); };
+}
+
+$("lock").onclick=()=>{ LS.del("ow-hub"); LS.del("ow-who"); location.reload(); };
+
+function startHub(fb,hub){
+  const {db,F}=fb;
+  const C=name=>F.collection(db,"hubs",hub,name), D=(name,id)=>F.doc(db,"hubs",hub,name,id);
+  const live=(q,fn)=>F.onSnapshot(q,s=>fn(s.docs.map(d=>({id:d.id,...d.data()}))),err=>console.error(err));
+  async function safe(p){ try{ await p; return true; }catch(e){ console.error(e); toast("That didn't save. Try again in a moment."); return false; } }
+
+  tickClocks(); renderEnvelopes();
+  $("who-chip").hidden=false; $("who-chip").textContent=(me==="her"?"You're the letter writer":"You're the letter reader")+" · switch";
+  $("who-chip").onclick=()=>{ LS.del("ow-who"); location.reload(); };
+
+  /* Opened letters follow you across devices; she sees which he's read */
+  const syncOpened=()=>safe(F.setDoc(D("state","opened_"+me),{ids:[...openedMine],at:Date.now()}));
+  onOpened=syncOpened;
+  live(C("state"),docs=>{ docs.forEach(d=>{ if(d.id==="opened_"+me){ (d.ids||[]).forEach(i=>openedMine.add(i)); saveOpened(); } if(d.id==="opened_him") openedHis=new Set(d.ids||[]); });  renderEnvelopes(); });
+
+  /* Replies (reactions + voice notes) and his letters */
+  HUB={F,D,C,db,safe,notify:()=>{}};
+
+  /* Notifications: each phone saves its own push address + choices */
+  { const myId=me+"_"+DEVICE_ID, myRef=D("push",myId);
+    let mine=null, theirs=[], refreshed=false;
+    const defaults=()=>Object.fromEntries(notifTypes().map(([k])=>[k,true]));
+    async function sendTo(d,type){ try{ const r=await fetch("/.netlify/functions/notify",{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify({sub:d.sub,type,name:NAMES[me]||""})});
+        if(r.status===410) safe(F.deleteDoc(D("push",d.id))); return r.ok; }catch(e){ return false; } }
+    HUB.notify=type=>{ const key=type==="photo"?"wall":type; theirs.forEach(d=>{ if(d.sub&&!(d.prefs&&d.prefs[key]===false)) sendTo(d,type); }); };
+    const enabled=()=>!!(mine&&mine.sub&&pushSupported()&&Notification.permission==="granted");
+    function render(){
+      $("bell").hidden=false;
+      const st=$("nf-status"), on=$("nf-on"), test=$("nf-test"), off=$("nf-off"), prefs=$("nf-prefs");
+      if(!pushSupported()){ st.textContent=isIOS&&!isStandalone()?"On iPhone, notifications only work from the home screen app. Tap Share, then Add to Home Screen, then open the hub from that icon and come back here.":"This browser can't show notifications. Try Safari or Chrome."; on.hidden=test.hidden=off.hidden=true; prefs.replaceChildren(); return; }
+      if(Notification.permission==="denied"){ st.textContent="Notifications are blocked for this site. Turn them on in your phone's settings (Settings → Notifications), then come back."; on.hidden=test.hidden=off.hidden=true; }
+      else if(enabled()){ st.textContent="Notifications are on for this phone ♥ Choose what buzzes you:"; on.hidden=true; test.hidden=off.hidden=false; }
+      else { st.textContent="Get a buzz on this phone when something happens in the hub."; on.hidden=false; test.hidden=off.hidden=true; }
+      const p=(mine&&mine.prefs)||defaults();
+      prefs.replaceChildren(...(enabled()?notifTypes().map(([k,label])=>{ const l=document.createElement("label"); const c=document.createElement("input"); c.type="checkbox"; c.id="nf-"+k; c.checked=p[k]!==false;
+        c.onchange=()=>safe(F.setDoc(myRef,{prefs:{[k]:c.checked}},{merge:true})); l.append(c,document.createTextNode(label)); return l; }):[]));
+      const dismissed=+(LS.get("ow-nb-later")||0);
+      $("notif-banner").hidden=enabled()||Notification.permission==="denied"||Date.now()-dismissed<5*86400000;
+      $("nb-text").textContent=!pushSupported()&&isIOS&&!isStandalone()
+        ? "Want notifications? Open the hub from your home screen icon first."
+        : (me==="her"?"Want a buzz when Jay thinks of you?":"Want a buzz when she sends you something?");
+      $("nb-on").hidden=!pushSupported();
+    }
+    async function turnOn(){
+      if(!pushSupported()){ $("notif").hidden=false; render(); return; }
+      let perm; try{ perm=await Notification.requestPermission(); }catch(e){ perm="default"; }
+      if(perm!=="granted"){ toast("No problem. You can turn them on anytime from 🔔 Notifications."); render(); return; }
+      try{ const reg=swReg||await navigator.serviceWorker.ready;
+        let sub=await reg.pushManager.getSubscription();
+        if(!sub) sub=await reg.pushManager.subscribe({userVisibleOnly:true,applicationServerKey:b64ToU8(VAPID_PUBLIC_KEY)});
+        await safe(F.setDoc(myRef,{who:me,sub:JSON.parse(JSON.stringify(sub)),prefs:(mine&&mine.prefs)||defaults(),at:Date.now()},{merge:true}));
+        toast("Notifications are on ♥"); }
+      catch(e){ console.error(e); toast("Couldn't turn on notifications. Make sure the latest version is uploaded, then try again."); }
+    }
+    async function refresh(){ if(refreshed||!pushSupported()||Notification.permission!=="granted"||!mine) return; refreshed=true;
+      try{ const reg=swReg||await navigator.serviceWorker.ready; let sub=await reg.pushManager.getSubscription();
+        if(!sub) sub=await reg.pushManager.subscribe({userVisibleOnly:true,applicationServerKey:b64ToU8(VAPID_PUBLIC_KEY)});
+        const j=JSON.parse(JSON.stringify(sub)); if(!mine.sub||mine.sub.endpoint!==j.endpoint) safe(F.setDoc(myRef,{who:me,sub:j,at:Date.now()},{merge:true})); }catch(e){ console.warn(e); } }
+    live(C("push"),docs=>{ mine=docs.find(d=>d.id===myId)||null; theirs=docs.filter(d=>d.who===other()); render(); refresh(); });
+    $("bell").onclick=()=>{ $("notif").hidden=false; render(); };
+    $("nf-close").onclick=()=>{ $("notif").hidden=true; };
+    $("notif").addEventListener("click",e=>{ if(e.target===$("notif")) $("notif").hidden=true; });
+    $("nf-on").onclick=turnOn; $("nb-on").onclick=turnOn;
+    $("nb-later").onclick=()=>{ LS.set("ow-nb-later",String(Date.now())); $("notif-banner").hidden=true; toast("You can turn them on anytime from 🔔 Notifications."); };
+    $("nf-test").onclick=async()=>{ if(!mine||!mine.sub) return; const ok=await sendTo(mine,"test"); toast(ok?"Test sent. It should pop up in a few seconds.":"The test didn't go through. Check the Netlify setup steps."); };
+    $("nf-off").onclick=async()=>{ try{ const reg=swReg||await navigator.serviceWorker.ready; const sub=await reg.pushManager.getSubscription(); if(sub) await sub.unsubscribe(); }catch(e){}
+      await safe(F.deleteDoc(myRef)); toast("Notifications are off for this phone."); };
+    render(); }
+  let firstReplies=true;
+  live(C("replies"),docs=>{ const prev=replies; replies=new Map(docs.map(d=>[d.id,d]));
+    if(!firstReplies) docs.forEach(d=>{ const p=prev.get(d.id);
+      if(d.by!==me&&(!p||p.at!==d.at)){ const l=letters.find(x=>x.id===d.id);
+        hearts(innerWidth/2,innerHeight/2,16); toast(`${d.by==="him"?"He":"She"} replied to “${l?l.when:"your letter"}” ${reactOf(d)}`); } });
+    firstReplies=false; renderEnvelopes(); });
+
+
+  /* Letters live privately in the hub; only the letter writer gets the editor */
+  live(F.query(C("letters"),F.orderBy("order")),docs=>{
+    if(docs.length){ letters=docs; lettersFromDb=true; } else { letters=defaultLetters(); lettersFromDb=false; }
+    renderEnvelopes();
+  });
+  if(me==="her"){
+    const ed=$("editor"), f={when:$("ed-when"),body:$("ed-body"),sign:$("ed-sign"),ps:$("ed-ps"),unlock:$("ed-unlock")};
+    let editingId=null, snapshot="", delArmed=false, closeArmed=false;
+    const read=()=>({when:f.when.value.trim(),body:f.body.value.replace(/\s+$/,""),sign:f.sign.value.trim(),ps:f.ps.value.trim(),unlock:f.unlock.value});
+    const dirty=()=>JSON.stringify(read())!==snapshot;
+    async function seed(){ if(lettersFromDb) return; const b=F.writeBatch(db);
+      letters.forEach(l=>b.set(D("letters",l.id),{when:l.when,body:l.body||"",sign:l.sign||"",ps:l.ps||"",unlock:l.unlock||"",order:l.order,at:Date.now()}));
+      await b.commit(); lettersFromDb=true; }
+    function close(){ ed.hidden=true; lastFocus?.focus?.(); }
+    letterEditor={ open(id){
+      editingId=id; const l=id?letters.find(x=>x.id===id):{when:"",body:"",sign:"",ps:"",unlock:""}; if(!l) return;
+      f.when.value=l.when||""; f.body.value=l.body||""; f.sign.value=l.sign||""; f.sign.placeholder=SIGN; f.ps.value=l.ps||""; f.unlock.value=l.unlock||"";
+      { const r=id&&replies.get(id); $("ed-reply").replaceChildren(...(r&&r.by!==me?[replyView(r)]:[])); }
+      snapshot=JSON.stringify(read()); delArmed=false; closeArmed=false;
+      $("ed-delete").textContent="Delete envelope"; $("ed-delete").hidden=!id;
+      $("ed-heading").textContent=id?(hasBody(l)?"Edit your letter":"Write this letter"):"New envelope";
+      ed.hidden=false; ed.scrollTop=0; (id?f.body:f.when).focus(); } };
+    $("ed-close").onclick=()=>{ if(dirty()&&!closeArmed){ closeArmed=true; toast("You have unsaved changes. Tap × again to close without saving."); return; } close(); };
+    ed.addEventListener("click",e=>{ if(e.target===ed) $("ed-close").onclick(); });
+    document.addEventListener("keydown",e=>{ if(!ed.hidden&&overlay.hidden&&e.key==="Escape") $("ed-close").onclick(); });
+    $("ed-preview").onclick=()=>{ const v=read(); showLetter({...v,when:v.when||"…"},false); };
+    $("editor-form").onsubmit=async e=>{ e.preventDefault(); const v=read(); if(!v.when){ f.when.focus(); return; }
+      const btn=$("ed-save"); btn.disabled=true; btn.textContent="Saving…";
+      try{ await seed();
+        const was=editingId?letters.find(x=>x.id===editingId):null;
+        if(editingId){ const cur=was||{}; await F.setDoc(D("letters",editingId),{...v,order:cur.order??0,at:Date.now()}); }
+        else { const id="n"+Date.now().toString(36); const order=Math.max(-1,...letters.map(l=>l.order??0))+1; await F.setDoc(D("letters",id),{...v,order,at:Date.now()}); }
+        const openNow=!v.unlock||new Date(v.unlock+"T00:00")<=new Date();
+        if(v.body.trim()&&!(was&&hasBody(was))&&openNow) HUB.notify("letter");
+        close(); toast(v.body.trim()?"Letter saved ♥":"Saved. It stays sealed until you write it.");
+      }catch(err){ console.error(err); toast("That didn't save. Try again in a moment."); }
+      btn.disabled=false; btn.textContent="Save letter"; };
+    $("ed-delete").onclick=async()=>{ if(!editingId) return;
+      if(!delArmed){ delArmed=true; $("ed-delete").textContent="Tap again to delete for good"; return; }
+      try{ await seed(); await F.deleteDoc(D("letters",editingId)); close(); toast("Envelope deleted."); }
+      catch(err){ console.error(err); toast("Couldn't delete that. Try again in a moment."); } };
+    renderEnvelopes();
+  }
+
+  /* Visit */
+  $("visit-edit").hidden=false;
+  F.onSnapshot(D("shared","visit"),s=>{ if(s.exists()){ const d=s.data(); if(d.date) visit={date:d.date,label:d.label||""}; } paintStub(); tickCountdown(); });
+  $("visit-edit").onclick=()=>{ const t=new Date(visit.date);
+    if(!isNaN(t)){ const parts=new Intl.DateTimeFormat("en-CA",{timeZone:"America/Chicago",year:"numeric",month:"2-digit",day:"2-digit",hour:"2-digit",minute:"2-digit",hourCycle:"h23"}).formatToParts(t).reduce((o,p)=>(o[p.type]=p.value,o),{});
+      $("visit-date").value=`${parts.year}-${parts.month}-${parts.day}T${parts.hour}:${parts.minute}`; }
+    $("visit-label").value=visit.label||""; $("visit-form").hidden=false; $("visit-edit").hidden=true; };
+  $("visit-cancel").onclick=()=>{ $("visit-form").hidden=true; $("visit-edit").hidden=false; };
+  $("visit-form").onsubmit=async e=>{ e.preventDefault(); const v=$("visit-date").value; if(!v) return;
+    // interpret as Champaign time
+    const guess=new Date(v+":00Z"); const off=new Date(guess.toLocaleString("en-US",{timeZone:"America/Chicago"}))-new Date(guess.toLocaleString("en-US",{timeZone:"UTC"}));
+    const iso=new Date(guess.getTime()-off).toISOString();
+    if(await safe(F.setDoc(D("shared","visit"),{date:iso,label:$("visit-label").value.trim(),by:me,at:Date.now()}))){ $("visit-form").hidden=true; $("visit-edit").hidden=false; toast("Countdown updated ♥"); } };
+
+  /* Thinking of you */
+  const tapBtn=$("tap"); tapBtn.disabled=false; let partner=null, first=true;
+  let lastTapPush=0;
+  tapBtn.onclick=e=>{ hearts(e.clientX,e.clientY,8); toast("Sent ♥"); safe(F.setDoc(D("taps",me),{last:Date.now()}));
+    if(Date.now()-lastTapPush>60000){ lastTapPush=Date.now(); HUB.notify("tap"); } };
+  const paintTap=()=>{ $("tap-note").textContent = partner&&partner.last ? `${other()==="him"?"He":"She"} last thought of you ${ago(partner.last)}.` : "Tap the heart whenever you think of each other. The other person sees it pop up."; };
+  // Heart confetti for taps you haven't seen yet (remembered per device)
+  const SEEN_KEY="ow-tapseen-"+me, He=other()==="him"?"He":"She";
+  let pendingRain=null;
+  const markSeen=t=>LS.set(SEEN_KEY,String(t));
+  function rainNow(msg,t){ if(document.hidden){ pendingRain={msg,t}; return; } heartRain(); setTimeout(()=>toast(msg),400); markSeen(t); }
+  document.addEventListener("visibilitychange",()=>{ if(!document.hidden&&pendingRain){ const r=pendingRain; pendingRain=null; rainNow(r.msg,r.t); } });
+  F.onSnapshot(D("taps",other()),s=>{ const v=s.exists()?s.data():null;
+    const seen=+(LS.get(SEEN_KEY)||0);
+    if(v&&v.last>seen){
+      if(first){ if(Date.now()-v.last<14*86400000) rainNow(`${He} thought of you ${ago(v.last)} ♥`,v.last); else markSeen(v.last); }
+      else rainNow(`${He}'s thinking of you right now ♥`,v.last);
+    }
+    partner=v; first=false; paintTap(); });
+  setInterval(paintTap,60000);
+
+  /* Pocket notes */
+  let pocket=[], lastNote=-1;
+  $("pocket-manage").hidden=false; $("pocket-summary").textContent=me==="her"?"Tuck a note in his pocket":"Tuck a note in her pocket";
+  live(F.query(C("pocket"),F.orderBy("at")),docs=>{
+    pocket=docs; const forMe=docs.filter(n=>n.by!==me).length;
+    $("pocket-btn").textContent=forMe?`Give me a little note (${forMe})`:"Give me a little note";
+    const ul=$("pocket-list"); ul.innerHTML=""; const mine=docs.filter(n=>n.by===me);
+    if(!mine.length){ const li=document.createElement("li"); li.className="muted"; li.textContent="Notes you send show up here."; ul.append(li); }
+    mine.forEach(n=>{ const li=document.createElement("li"); const s=document.createElement("span"); s.textContent=n.text; const x=document.createElement("button"); x.className="link"; x.type="button"; x.textContent="remove"; x.onclick=()=>safe(F.deleteDoc(D("pocket",n.id))); li.append(s,x); ul.append(li); });
+  });
+  $("pocket-btn").onclick=e=>{ const forMe=pocket.filter(n=>n.by!==me);
+    if(!forMe.length){ $("pocket").textContent="No notes in your pocket yet. Check back soon ♥"; $("pocket-from").hidden=true; return; }
+    let i; do{ i=Math.floor(Math.random()*forMe.length); }while(i===lastNote&&forMe.length>1); lastNote=i; const n=forMe[i];
+    $("pocket").textContent=n.text; $("pocket-from").textContent=`from ${n.by} · ${ago(n.at)}`; $("pocket-from").hidden=false; hearts(e.clientX,e.clientY,5); };
+  $("pocket-form").onsubmit=async e=>{ e.preventDefault(); const v=$("pocket-input").value.trim(); if(!v) return;
+    if(await safe(F.addDoc(C("pocket"),{text:v,by:me,at:Date.now()}))){ $("pocket-input").value=""; toast("Tucked in their pocket ♥"); HUB.notify("pocket"); } };
+
+  /* Fridge: notes + photos, each held up by a magnet */
+  const face=(x,y,s=4.5)=>`<ellipse cx="${x-s}" cy="${y}" rx="1.7" ry="2.1" fill="#3b2626"/><ellipse cx="${x+s}" cy="${y}" rx="1.7" ry="2.1" fill="#3b2626"/><circle cx="${x-s-.6}" cy="${y-.9}" r=".6" fill="#fff"/><circle cx="${x+s-.6}" cy="${y-.9}" r=".6" fill="#fff"/><ellipse cx="${x-s-2.6}" cy="${y+3.2}" rx="2.3" ry="1.4" fill="#ff7f9e" opacity=".65"/><ellipse cx="${x+s+2.6}" cy="${y+3.2}" rx="2.3" ry="1.4" fill="#ff7f9e" opacity=".65"/><path d="M${x-1.8} ${y+2.5}q1.8 1.9 3.6 0" fill="none" stroke="#3b2626" stroke-width="1.2" stroke-linecap="round"/>`;
+  const shine=(x,y,rx=3.5,ry=2,r=-30)=>`<ellipse cx="${x}" cy="${y}" rx="${rx}" ry="${ry}" fill="#fff" opacity=".6" transform="rotate(${r} ${x} ${y})"/>`;
+  const HEART="M24 42C10 33 4 25 4 16.5 4 10.6 8.6 6 14.3 6c4 0 7.4 2.2 9.7 5.6C26.3 8.2 29.7 6 33.7 6 39.4 6 44 10.6 44 16.5 44 25 38 33 24 42z";
+  const icon=(inner)=>({w:42,h:42,svg:`<svg viewBox="0 0 48 48">${inner}</svg>`});
+  const word=(txt,bg,fg,rot=0)=>{ const w=Math.max(54,txt.length*10+22);
+    return {w:Math.round(w*.85),h:26,svg:`<svg viewBox="0 0 ${w} 30"><rect x="1" y="1" width="${w-2}" height="28" rx="14" fill="${bg}" stroke="rgba(0,0,0,.12)"/><rect x="6" y="4" width="${w-24}" height="5" rx="2.5" fill="#fff" opacity=".35"/><text x="${w/2}" y="20.5" text-anchor="middle" font-family="'Courier Prime','Courier New',monospace" font-weight="700" font-size="14" fill="${fg}">${txt}</text></svg>`}; };
+  const tiles=(txt,colors)=>{ const n=txt.length, w=n*20+2;
+    return {w:Math.round(w*.9),h:26,svg:`<svg viewBox="0 0 ${w} 30">${[...txt].map((ch,i)=>`<g transform="rotate(${[-6,5,-3,6,-4][i%5]} ${i*20+11} 15)"><rect x="${i*20+2}" y="3" width="18" height="24" rx="4" fill="${colors[i%colors.length]}" stroke="rgba(0,0,0,.12)"/><text x="${i*20+11}" y="21" text-anchor="middle" font-family="Gloock,Georgia,serif" font-size="16" fill="#fff">${ch}</text></g>`).join("")}</svg>`}; };
+  const MAGNETS=[
+    // kawaii heart
+    icon(`<path d="${HEART}" fill="#ff5d7a" stroke="#d93b5c" stroke-width="1.5"/>${shine(13,14)}${face(24,21)}`),
+    // two little hearts
+    icon(`<path d="${HEART}" fill="#ff9ec0" stroke="#e57aa3" stroke-width="1.5" transform="translate(2 6) scale(.82)"/><path d="${HEART}" fill="#e0435c" stroke="#c22f48" stroke-width="2" transform="translate(27 2) scale(.42)"/>${shine(12,17,3,1.8)}${face(21.5,24,4)}`),
+    // daisy
+    icon(`<g fill="#fff" stroke="#eadfd2" stroke-width="1">${[0,45,90,135,180,225,270,315].map(a=>`<ellipse cx="24" cy="11" rx="5.5" ry="8.5" transform="rotate(${a} 24 24)"/>`).join("")}</g><circle cx="24" cy="24" r="9.5" fill="#ffd25e" stroke="#f0b53a" stroke-width="1.2"/>${face(24,23.5,3.4)}`),
+    // pink flower
+    icon(`<g fill="#ff8fb8" stroke="#ec6f9c" stroke-width="1">${[0,72,144,216,288].map(a=>`<circle cx="24" cy="12" r="9" transform="rotate(${a} 24 24)"/>`).join("")}</g><circle cx="24" cy="24" r="8.5" fill="#fff3b0" stroke="#f3d36a" stroke-width="1"/>${face(24,23.5,3.2)}`),
+    // tulip
+    icon(`<path d="M24 46V30" stroke="#5aa346" stroke-width="2.4" stroke-linecap="round"/><path d="M24 40c-6-1-10-5-11-10 6 0 10 4 11 10z" fill="#7cc35f"/><path d="M12 10l6 5 6-9 6 9 6-5v12c0 7-5 11-12 11s-12-4-12-11z" fill="#ff6f91" stroke="#e04f73" stroke-width="1.3" stroke-linejoin="round"/>${shine(16,17,2.5,1.5)}${face(24,22,3.6)}`),
+    // volleyball
+    icon(`<circle cx="24" cy="24" r="19" fill="#fff" stroke="#2f4f9e" stroke-width="1.6"/><clipPath id="vbc"><circle cx="24" cy="24" r="18.2"/></clipPath><g clip-path="url(#vbc)" fill="none" stroke-width="5"><path d="M24 4c9 9 10 24 1 40" stroke="#2f6fd6"/><path d="M5 17c11 0 25 8 31 24" stroke="#ffcf3a"/><path d="M8 35c6-10 18-19 36-20" stroke="#2f6fd6"/></g><g fill="none" stroke="#2f4f9e" stroke-width=".9" opacity=".5"><path d="M24 4c9 9 10 24 1 40"/><path d="M5 17c11 0 25 8 31 24"/><path d="M8 35c6-10 18-19 36-20"/></g>${shine(16,13,4,2.3)}`),
+    // shot put
+    icon(`<circle cx="24" cy="25" r="17" fill="#8b939e" stroke="#646c77" stroke-width="1.5"/><circle cx="24" cy="25" r="17" fill="none" stroke="#a9b0b9" stroke-width="3" opacity=".5" transform="translate(-1 -1)"/>${shine(16,17,5,3)}${face(24,27,4.6)}<path d="M41 6l1.2 2.8L45 10l-2.8 1.2L41 14l-1.2-2.8L37 10l2.8-1.2z" fill="#ffd25e"/>`),
+    // discus
+    icon(`<ellipse cx="24" cy="26" rx="21" ry="13" fill="#6f7782"/><ellipse cx="24" cy="24" rx="21" ry="13" fill="#c3cad2" stroke="#8b949e" stroke-width="1.4"/><ellipse cx="24" cy="24" rx="14" ry="8.5" fill="#e0435c" stroke="#c22f48" stroke-width="1"/><ellipse cx="24" cy="24" rx="5" ry="3" fill="#eef1f4" opacity=".9"/>${shine(13,19,4,1.6,-10)}${face(24,22.5,6.5)}`),
+    // word magnets
+    word("miss u","#ff6f91","#fff"),
+    word("ur cute","#ffd25e","#5a3a1a"),
+    word("mine ♥","#7fb4ff","#fff"),
+    word("hi babe","#9be0b5","#245a3a"),
+    word("soon!","#c9a8ff","#fff"),
+    tiles("xoxo",["#ff5d7a","#4f7fd6","#ffb83a","#5fbf7a"]),
+    tiles("ily",["#e0435c","#ff8fb8","#c9a8ff"]),
+  ];
+  const hashOf=s=>{ let h=0; for(const ch of s) h=(h*31+ch.charCodeAt(0))|0; return Math.abs(h); };
+  const mix=s=>{ let h=hashOf(s)|0; h^=h>>>16; h=Math.imul(h,0x85ebca6b); h^=h>>>13; h=Math.imul(h,0xc2b2ae35); h^=h>>>16; return h>>>0; };
+  let lastStyle={};   // reset each render; keeps neighbours from matching
+  const pickStyle=(id,n,kind)=>{ let k=mix(id+kind)%n; if(k===lastStyle[kind]) k=(k+1+mix(id)%(n-1))%n; lastStyle[kind]=k; return k; };
+  function magnet(id){ const h=hashOf(id), mg=MAGNETS[h%MAGNETS.length]; const m=document.createElement("span"); m.className="magnet"; m.setAttribute("aria-hidden","true");
+    m.innerHTML=mg.svg; m.style.width=mg.w+"px"; m.style.height=mg.h+"px"; m.style.marginLeft=(-mg.w/2)+"px"; m.style.top=(-mg.h*0.45)+"px";
+    m.style.setProperty("--mr",((h>>3)%25-12)+"deg"); return m; }
+
+  let wallDocs=[], photoDocs=[];
+  function renderFridge(){ lastStyle={};
+    const w=$("wall"); w.innerHTML="";
+    const items=[...wallDocs.map(d=>({...d,kind:"note"})),...photoDocs.map(d=>({...d,kind:"photo"}))].sort((a,b)=>b.at-a.at);
+    if(!items.length){ w.append(emptyBox("The fridge is empty. Stick up the first note or photo ↑")); return; }
+    items.forEach(it=>{
+      const tilt=((hashOf(it.id)>>5)%7-3)*0.7+"deg";
+      const meta=document.createElement("div"); meta.className="meta"; const s=document.createElement("span");
+      s.textContent=`from ${whoLabel(it.by)} · ${it.kind==="photo"?shortDate(it.at):ago(it.at)}`; meta.append(s);
+      if(it.by===me){ const x=document.createElement("button"); x.className="x"; x.type="button"; x.textContent="×";
+        x.setAttribute("aria-label",it.kind==="photo"?"Remove photo":"Remove note"); x.onclick=async()=>{ if(it.kind==="photo"){ if(await safe(F.deleteDoc(D("photos",it.id))) && it.full) safe(F.deleteDoc(D("photoFull",it.id))); } else safe(F.deleteDoc(D("wall",it.id))); }; meta.append(x); }
+      let card;
+      if(it.kind==="note"){
+        card=document.createElement("div"); card.className="sticky note-"+pickStyle(it.id,9,"n");
+        const p=document.createElement("p"); p.textContent=it.text; card.append(p,meta);
+      } else {
+        card=document.createElement("figure"); card.className="polaroid frame-"+pickStyle(it.id,10,"p");
+        const b=document.createElement("button"); b.type="button"; b.className="ph"; b.setAttribute("aria-label","View photo larger");
+        const thumb=it.thumb||it.img;
+        const img=document.createElement("img"); img.src=thumb; img.alt=it.caption||"Photo"; img.loading="lazy"; b.append(img);
+        b.onclick=async()=>{ openLb(thumb,it.caption);
+          if(it.full){ try{ const s=await F.getDoc(D("photoFull",it.id)); if(s.exists()&&!lb.hidden) $("lb-img").src=s.data().img; }catch(e){ console.error(e); } } };
+        const cap=document.createElement("figcaption"); cap.textContent=it.caption||""; card.append(b,cap,meta);
+      }
+      card.style.setProperty("--tilt",tilt); card.prepend(magnet(it.id)); w.append(card);
+    });
+  }
+  live(F.query(C("wall"),F.orderBy("at","desc"),F.limit(120)),docs=>{ wallDocs=docs; renderFridge(); });
+  live(F.query(C("photos"),F.orderBy("at","desc"),F.limit(60)),docs=>{ photoDocs=docs; renderFridge(); });
+
+  $("photo-file").onchange=()=>{ const f=$("photo-file").files[0];
+    $("photo-file-label").textContent=f?"Change photo":"+ Add a photo"; $("photo-clear").hidden=!f; $("photo-preview").hidden=!f;
+    if(f){ try{ $("photo-preview").src=URL.createObjectURL(f); }catch(e){} } };
+  $("photo-clear").onclick=()=>{ $("photo-file").value=""; $("photo-file").onchange(); };
+  async function shrink(file,max,q){ const bmp=await createImageBitmap(file); const k=Math.min(1,max/Math.max(bmp.width,bmp.height));
+    const cv=document.createElement("canvas"); cv.width=Math.round(bmp.width*k); cv.height=Math.round(bmp.height*k); cv.getContext("2d").drawImage(bmp,0,0,cv.width,cv.height); return cv.toDataURL("image/jpeg",q); }
+  $("wall-form").onsubmit=async e=>{ e.preventDefault();
+    const text=$("wall-input").value.trim(), f=$("photo-file").files[0];
+    if(!text && !f){ toast("Write a note or add a photo first."); return; }
+    const btn=$("wall-submit"); btn.disabled=true; btn.textContent="Sticking…";
+    try{
+      let ok;
+      if(f){ let img=await shrink(f,1400,.8); if(img.length>900000) img=await shrink(f,1000,.68);
+        const thumb=await shrink(f,420,.72);
+        const ref=F.doc(C("photos")), b=F.writeBatch(db);
+        b.set(D("photoFull",ref.id),{img,at:Date.now()});
+        b.set(ref,{thumb,full:true,caption:text.slice(0,120),by:me,at:Date.now()});
+        ok=await safe(b.commit()); }
+      else ok=await safe(F.addDoc(C("wall"),{text,by:me,at:Date.now()}));
+      if(ok){ $("wall-input").value=""; $("photo-file").value=""; $("photo-file").onchange(); toast("Stuck to the fridge ♥"); HUB.notify(f?"photo":"wall"); }
+    }catch(err){ console.error(err); toast("That photo didn't work. Try a JPG or PNG."); }
+    btn.disabled=false; btn.textContent="Stick it"; };
+
+  /* Lists */
+  function list(name,emptyMsg){
+    live(F.query(C(name),F.orderBy("at")),docs=>{
+      const ul=$(name); ul.innerHTML="";
+      if(!docs.length){ const li=document.createElement("li"); li.className="muted"; li.textContent=emptyMsg; ul.append(li); return; }
+      docs.forEach(d=>{ const li=document.createElement("li"); if(d.done) li.className="done";
+        const cb=document.createElement("input"); cb.type="checkbox"; cb.id=name+"-"+d.id; cb.checked=!!d.done; cb.onchange=()=>safe(F.updateDoc(D(name,d.id),{done:cb.checked}));
+        const lab=document.createElement("label"); lab.className="txt"; lab.htmlFor=cb.id; lab.textContent=d.text;
+        const by=document.createElement("span"); by.className="by"; by.textContent="added by "+whoLabel(d.by); lab.append(by);
+        const x=document.createElement("button"); x.className="x"; x.type="button"; x.setAttribute("aria-label","Remove"); x.textContent="×"; x.onclick=()=>safe(F.deleteDoc(D(name,d.id)));
+        li.append(cb,lab,x); ul.append(li); });
+    });
+    $(name+"-form").onsubmit=async e=>{ e.preventDefault(); const v=$(name+"-input").value.trim(); if(!v) return;
+      if(await safe(F.addDoc(C(name),{text:v,done:false,by:me,at:Date.now()}))) $(name+"-input").value=""; };
+  }
+  list("plans","Nothing planned yet. What do you want to do on November 20?");
+  list("someday","Nothing here yet. Dream big.");
+  setupDateNight({F,D,C,db,safe,live});
+
+  /* Songs */
+  live(F.query(C("songs"),F.orderBy("at","desc"),F.limit(200)),docs=>{
+    const w=$("songs"); w.innerHTML=""; if(!docs.length){ const p=document.createElement("p"); p.className="muted"; p.textContent="No songs yet. Send the first one ♪"; w.append(p); return; }
+    let prevV=-1;
+    docs.forEach(s=>{ const c=document.createElement("article"); c.className="song";
+      let vh=0; for(const ch of String(s.id)) vh=(vh*31+ch.charCodeAt(0))|0;
+      let vi=Math.abs(vh)%8; if(vi===prevV) vi=(vi+3)%8; prevV=vi;
+      const v=document.createElement("div"); v.className="vinyl v"+vi; v.setAttribute("aria-hidden","true");
+      v.innerHTML='<div class="disc"><span class="lbl">♥</span></div>';
+      const t=document.createElement("div"); t.className="st"; t.textContent=s.title; const a=document.createElement("div"); a.className="sa"; a.textContent=s.artist||""; c.append(v,t,a);
+      if(s.why){ const p=document.createElement("p"); p.className="why"; p.textContent=s.why; c.append(p); }
+      const m=document.createElement("div"); m.className="meta"; const from=document.createElement("span"); from.textContent=`from ${whoLabel(s.by)} · ${shortDate(s.at)}`; m.append(from);
+      if(/^https:\/\//i.test(s.link||"")){ const l=document.createElement("a"); l.href=s.link; l.target="_blank"; l.rel="noopener"; l.textContent="▶ Listen"; m.append(l); }
+      if(s.by===me){ const x=document.createElement("button"); x.className="x"; x.type="button"; x.textContent="remove"; x.onclick=()=>safe(F.deleteDoc(D("songs",s.id))); m.append(x); }
+      c.append(m); w.append(c); });
+  });
+  $("song-form").onsubmit=async e=>{ e.preventDefault(); const title=$("song-title").value.trim(); if(!title) return;
+    let link=$("song-link").value.trim(); if(link&&!/^https?:\/\//i.test(link)) link="https://"+link; link=link.replace(/^http:/i,"https:");
+    if(await safe(F.addDoc(C("songs"),{title,artist:$("song-artist").value.trim(),link,why:$("song-why").value.trim(),by:me,at:Date.now()}))){ $("song-form").reset(); $("song-details").open=false; toast("Song sent ♪"); HUB.notify("song"); } };
+
+  /* Timeline */
+  live(C("memories"),docs=>{
+    const ol=$("timeline"); ol.innerHTML="";
+    if(!docs.length){ const li=document.createElement("li"); li.className="empty"; li.textContent="Start our story. Add the day we met."; ol.append(li); return; }
+    const sorted=[...docs].sort((a,b)=>(a.date||"").localeCompare(b.date||""));
+    sorted.forEach(mm=>{ const li=document.createElement("li"); const d=new Date((mm.date||"")+"T12:00");
+      const td=document.createElement("span"); td.className="td"; td.textContent=isNaN(d)?"":d.toLocaleDateString(undefined,{month:"long",day:"numeric",year:"numeric"});
+      const tt=document.createElement("span"); tt.className="tt"; tt.textContent=mm.title; li.append(td,tt);
+      if(mm.note){ const tn=document.createElement("p"); tn.className="tn"; tn.textContent=mm.note; li.append(tn); }
+      const tm=document.createElement("div"); tm.className="tm"; const by=document.createElement("span"); by.textContent="added by "+whoLabel(mm.by); tm.append(by);
+      const x=document.createElement("button"); x.type="button"; x.textContent="remove"; x.onclick=()=>safe(F.deleteDoc(D("memories",mm.id))); tm.append(x);
+      li.append(tm); ol.append(li); });
+    const first=new Date((sorted[0].date||"")+"T12:00");
+    if(!isNaN(first)){ const days=Math.floor((Date.now()-first)/86400000); if(days>0){ const li=document.createElement("li"); const s=document.createElement("span"); s.className="since"; s.textContent=`…and ${days.toLocaleString()} days of us so far.`; li.append(s); ol.append(li); } }
+  });
+  $("memory-form").onsubmit=async e=>{ e.preventDefault(); const date=$("memory-date").value,title=$("memory-title").value.trim(); if(!date||!title) return;
+    if(await safe(F.addDoc(C("memories"),{date,title,note:$("memory-note").value.trim(),by:me,at:Date.now()}))){ $("memory-form").reset(); toast("Added to our story ♥"); HUB.notify("memory"); } };
+}
+</script>
+</body>
+</html>
